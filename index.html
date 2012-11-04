@@ -1,0 +1,301 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Scada|Play:700&subset=latin,cyrillic,cyrillic-ext,latin-ext" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+			body {
+				background: url( 'images/asfalt.png' );
+				font-family: "Scada";
+				color: #fff;
+				text-shadow: 0 0 2px #000;
+			}
+
+			h1, h2, h3 {
+				font-family: "Play";
+				margin: 0px;
+			}
+
+			#wrapper {
+				margin: auto;
+				margin-top: 25px;
+				width: 960px;
+				text-align: justify;
+			}
+
+			code {
+				display: block;
+				background: rgba( 255, 255, 255, 0.2 );
+				width: 50%;
+				overflow: auto;
+				padding: 15px;
+				margin: 15px;
+				border-radius: 5px;
+				border: 3px solid rgba( 255, 255, 255, 0.7 );
+				box-shadow: 0 0 15px #000 inset;
+				font-family: "Ubuntu Mono";
+			}
+
+			img {
+				width: 360px;
+				border-radius: 5px;
+				border: 4px solid rgba( 255, 255, 255, 0.7 );
+				box-shadow: 0 0 5px #000;
+				float: right;
+  				transition: all 0.3s ease-out; 
+  				margin-left: 20px;
+			}
+
+			a:hover img {
+				border: 4px solid #F2BF97;	
+				box-shadow: 0 0 15px #000;			
+			}
+
+			a {
+				color: #f99;
+				text-decoration: none;
+  				transition: all 0.3s ease-out; 
+			}
+
+			a:hover {
+				color: #ff9;
+				text-decoration: none;
+			}
+
+			a.2 {
+ 			   	background: #F2BF97;
+    			border-radius: 2px;
+				padding: 3px 5px;
+				color: #000;
+				text-decoration: none;
+  				transition: all 0.3s ease-out; 
+			}
+
+			a.2:hover {
+				background: #53A7EA;
+				color: #fff;
+			}
+
+			b {
+				font-family: "Play";				
+			}
+
+			div.im {
+
+			}
+
+			div.ni {
+				background: rgba( 255, 255, 255, 0.25 );
+				color: #ddcc99;
+				box-shadow: 0 0 5px #000;
+				width: 480px;
+				padding: 10px;
+				border: 3px solid #c61;
+				margin: 10px;
+			}
+
+			div.ni:before {
+				display: block;
+				float: left;
+				content: '!';
+				color: #f93;
+				text-shadow: 0 0 5px #f93;
+				font-size: 48px;
+				margin-right: 20px;
+			}
+
+			img.inline {
+				float: none;
+				clear: both;
+				width: auto;
+				border: none;
+				border-radius: 0;
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<h1>Russian WolfCamQL Guide by Legless &amp; Salamatiqus</h1>
+			<h2>О, WolfCam!</h2>
+				<p>
+					В старые добрые времена, когда Дум 3 был одной из самых ожидаемых игр, в стане Quake 3 Arena существовала программа для мувимейкинга. Это программа &mdash; легенда, и имя ей &mdash; <b>Quake 3 Movie Maker's Edition (q3mme)</b>. 
+				</p>
+
+				<p>
+					Прошли годы, Кармак решил возродить старушку Арену и скрестил её с бессмертным Интернетом и его Веб-браузерами. Пока он и его команда обновляли, меняли, добавляли разный контент в их воскрешенную игру, недалеко от них, в стане ванильщиков допиливали код Quake 3 Arena Point Release 1.32 и довели его до неоффициального 1.36. Они известны, их чадо зовется ioquake3.
+				</p>
+
+				<p>
+					И вот, в один прекрасный день один прекрасный человек сделал WolfCamQL &mdash; изначально модифицированный ioquake для просмотра демо-файлов без установленного Quake Live, а сейчас &mdash; полноценный инструмент для муви-мейкинга, разросшийся сейчас до версии 9.2. Пока что это единственная программа, решившая продолжить путь q3mme в стане Quake Live. 
+				</p>
+				<p>
+					Он поддерживает 73-й протокол (а с версии 9.0 &mdash; ещё и обратный 68-й), скрипты, совместимые с q3mme и кучу всего, нужного и не очень для создания полноценного игрового видео.
+				</p>
+			<h2>Установка</h2>
+				<p>
+					Установка этой замечательной программы необычаяно проста. Для неё нужно только лишь скачать последнюю версию (на данный момент это <a href="http://www.gamefront.com/files/21897234/wolfcamql-9.2.zip">WolfCam 9.2</a>) и распаковать её куда-нибудь.
+				</p>
+				<p>
+					После чего нужно скопировать из папки QuakeLive все паки. Для этого переходим в: 
+					<ul>
+						<li>Vista/7/8: <br /> <code>%AppData%\..\LocalLow\id Software\quakelive\baseq3</code></li>
+						<li>XP: <br /> <code>%appdata%\id Software\quakelive\baseq3</code></li>
+						<li>Linux: <br /> <code>~/.quakelive/quakelive/baseq3/</code></li>
+						<li>OSX: <br /> <code>~/Library/Application/Support/Quakelive/baseq3/</code></li>
+					</ul>
+
+					И копируем оттуда все файлы в папку /baseq3/ в дректории, где распакован WolfCam.
+				</p>
+
+
+			<h2>Базовая настройка</h2>
+				<p>
+					По-умолчанию WolfCam снимает видео на диск C:\, что бы это исправить, необходимо запускать его с другими настройками. Для этого нужно создать файл *.bat, где написать:
+					<code>
+						start <i>путь_к_вульфкаму</i>\wolfcamql.exe +set fs_homepath "<i>путь_к_вульфкаму</i>"
+					</code>
+
+					После этого WolfCam будет сохрнять видео и скриншоты указанную директорию (в данном случае туда же, где лежит его exe-файл) в папки wolfcamql/videos/ и wolfcamql/screenshots/ соответственно. Запускать програму нужно будет именно этим файлом.
+				</p>
+
+			<h2>Использование для просмотра демо</h2>
+			<h3>Управление временем</h3>
+
+			<h2>Съёмка видео</h2>
+				<p>
+					Перед съёмкой видео необходимо настройть количество FPS (кадров в секунду), делается это командой 
+					<code>/cl_aviFrameRate fps</code>
+					где fps — любое число от 1 до 1000. 
+					<div class="ni">Хотя FPS может быть любым, рекомендуетя ставить его как можно больше (удобнее редактировать видео впоследствии) и кратным количеству кадров в секунду у выходного видео, которое, в свою очередь, равняется 30FPS на YouTube, 50/60 FPS на Own3d. </div>
+				</p>
+
+				<p>
+					Сама же запись видео производится командой 
+					<code>/video [params]</code>
+					где <i>params</i> — параметры формата выходного видео. Возможные варианты вывода изобржения: png, tga, jpeg, avi, avins. Первые три на выходе дают <b>секвенцию</b> — последовательность файлов по одному на кадр. Два последних — один видеофайл в формате <b>losless</b> (несжатый, т.е., без потери качества) avi, содержащий все файлы сразу. Различие avi и avins в том, что последний не пишет звук в avi-файл. 
+				</p>
+				<p>
+					Добавить к снятому видео звук можно так же просто: всего лишь добавив <b>wav</b> к параметрам записи, например
+					<code>/video avi wav</code>
+				</p>
+
+			<h3>Продвинутый захват (фрикамминг, переключение PoV-ов)</h3>
+				<p>
+					Кроме обычной съёмки WolfCam даёт возможность летать по карте как спектатор. Команда <code>/freecam</code> (по-умолчанию забиндена на Enter) включает и выключает режим фрикамминга, команда <code>/cg_freecam_noclip 1|0</code> включает/выключает прохождение камеры сквозь стены.
+				</p>
+
+				<p>
+
+					Кроме этого существует возможность смотреть демку от лица других игроков: сначала нужно узнать id игрока используя команду
+
+					<a href="images/screenshots/enemys_pov.jpg" target="_blank"><img src="images/screenshots/enemys_pov.jpg" /></a>
+					
+					<code>/players</code>
+					Вывод этой команды примерно такой:
+					<code>X 00 Cypher<br />
+						  X 01 Cooller<br />
+						  X 02 FanJibo</code>
+					И для просмотре демки от другого лица остается лишь выполнить команду
+					<code>/follow <i>номер_игрока</i></code>
+
+					<div class="ni">В виду технической особенности демок QuakeLive, вы не сможете посмотреть моменты глазами игрока, который находится слишком далеко от снимающего демку.</div>
+				</p>
+
+			<h4>Продвинутые техники создания камер</h4>
+				<p>
+					<a href="images/screenshots/camera_point_info.jpg" target="_blank"><img src="images/screenshots/camera_point_info.jpg" /></a>
+					Кроме возможности просто полетать камерой по карте (управляя её дрожжащей рукой), управление полётом камеры можно повесить на WolfCam, задав только нужные ключевые точки. В свою очередь програма красиво интерполирует полёт по времени.
+				</p>
+				<p>
+					Для этого нужно, во-первых, перейти в режим фрикамминга, после чего создать первую точку пути, вызвав команду
+					<code>/addcamerapoint</code>
+
+
+					<a href="images/screenshots/camera_path.jpg" target="_blank"><img src="images/screenshots/camera_path.jpg" /></a>
+					<div class="ni">
+						Крайне желательно включить отображение информации о пути и точках с помощью команд 
+						<code>
+							/cg_drawCameraPointInfo 1<br />
+							/cg_drawCameraPath 1
+						</code>
+					</div>
+					После этого можно создав весь путь, выставляя ключевые точки там, где нужно с помощью этой же команды. 
+				</p>
+				<p>
+					Проиграть полученный путь можно с помощью команды <code>/playcamera</code> или просто перейдя ко времени начала этого пути.
+				</p>
+				<p>	
+					Для удаления пути нужно использовать команду
+					<code>/clearcamerapoints</code>
+				</p>
+
+			<h4>Продвинутые пути</h4>
+				<p>...</p>
+
+			<h2>Продвинутая настройка</h2>
+			<h3>Нестандартные шрифты и модели</h3>
+				<p>...</p>
+			<h3>Depth of Field</h3>
+				<p>
+					<a href="images/screenshots/dof.png" target="_blank"><img src="images/screenshots/dof.png" /></a>
+					Depth of Field (а по-русски "глубна резкости") — это, по сути, размытие всех объектов, которые находятся дальше определённого расстояния от точки фокуса камеры. Поддержка этого отличного эффекта в вульфкаме заключается всего в одной команде — <b>/mme_saveDepth 1</b>, которая включает запись второго видеоряда, включающего в себя Z-Buffer (буфер глубины, интенсивность пикселей которого зависит от расстояния до камеры) в том же формате, что и основное видео (секвенция картинок или avi-файл). 
+				</p>
+				<p>
+					После захвата полученное видео необходимо обработать для, собственно, включения DoF. Я покажу это на примере Adobe After Effects.
+				</p>
+				<p>
+					Делается это очень просто: берём оба видео и создаём новую композицию с ними так, что бы видео с depth-буффером было снизу.
+					<img src="images/screenshots/dof-ae-1.png" class="inline" />
+				</p>
+				<p>
+					К верхнему, цветному видео применяем эффект Lens Blur, указав в качестве параметра <b>Depth Map Layer</b> слой с Z-буффером.
+					<img src="images/screenshots/dof-ae-2.png" class="inline" />
+				</p>
+				<p>
+					При необходимости, регулруем фокус параметром <b>Blur Focal Distance</b>, силу размытия &mdash; <b>Iris Radius</b> и форму боке — <b>Iris Shape</b>.
+				</p>
+
+			<h3>Встроенный motion blur</h3>
+				<p>...</p>
+
+			<h3>Bloom и цветокоррекция</h3>
+				<p>...</p>
+
+			<h2>Работа с демо-файлами</h2>
+			<h3>Нарезка демо-файлов</h3>
+				<p>
+					WolfCam позволяет вырезать небольшой кусок из большого демо-файла используя команду <b>/record</b> во время просмотра. Для удобства желательно использовать следующие бинды: 
+					<code>
+						/bind n "pause; record" <br />
+						/bind m "stoprecord"
+					</code>
+				</p>
+				<p>
+					После нажатия клавиши <b>m</b> проигрывание демо станет на паузу, а после возобновления пригрывания начнёт записываться новый демо-файл, содержащий нужный кусок.
+				</p>
+
+			<h3>Использование демо 68-го протокола (Quake 3 Arena)</h3>
+				<p>
+					Начиная с версии 9.0 в Вульфкаме появилась поддержка протокола Quake 3 Arena. Для её включения нужно скопировать нужные паки Q3 в директорию /baseq3/ и запустить WolfCam следующим образом (см. раздел "Базовая настройка"):
+					<code>
+						wolfcamql.exe +set protocol 68
+					</code>
+				</p>
+
+			<h2>FX-подсистема</h2>
+				<p>...</p>
+
+			<h2>Небольшие хитрости</h2>
+				<p>...</p>
+
+			<h2>FAQ</h2>
+				<p>...</p>
+
+			<h2>Ссылки</h2>
+				<p>...</p>
+
+			<h2>Послесловие</h2>
+				<p>...</p>
+		</div>
+	</body>
+</html>
