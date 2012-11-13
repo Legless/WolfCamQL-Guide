@@ -135,6 +135,7 @@
 			<h2>Продвинутая настройка</h2>
 			<h3>Нестандартные шрифты и модели</h3>
 				<p>...</p>
+				
 			<h3>Depth of Field</h3>
 				<p>
 					<a href="images/screenshots/dof.png" target="_blank"><img src="images/screenshots/dof.png" /></a>
@@ -159,7 +160,33 @@
 				<p>...</p>
 
 			<h3>Bloom и цветокоррекция</h3>
-				<p>...</p>
+				<p>
+					<a href="images/screenshots/bloom_disabled.jpg" target="_blank"><img src="images/screenshots/bloom_disabled.jpg" /></a>
+					Bloom (блум) &mdash это один из эффектов постобработки, который делает яркие части изображения ещё ярче, создавая вокруг них свечение. 
+					Принцип работы блума заключается в следующем: 
+					<ol>
+						<li>Текущий кадр сохраняется в отдельную текстуру</li>
+						<li>Отсекаются недостаточные по яркости пиксели</li>
+						<li>Текстура размывается</li>
+						<li>Выолняется цветокоррекция исходного кадра и текстуры блума: изменяются их насыщенности и яркости</li>
+						<li>Размытая текстура блума складывается с текущим кадром</li>
+					</ol>
+				</p>
+				<br /> <!-- Грязный хак вёрстки: без него скрины блума ложаться в одну строку, что недопустимо. -->
+				<p>
+					<a href="images/screenshots/bloom_enabled.jpg" target="_blank"><img src="images/screenshots/bloom_enabled.jpg" /></a>
+					В Вульфкаме блум включается командой <b>/r_enableBloom 1</b>, и регулируется следующими командами:
+					<code>
+						<b>/r_bloomPasses</b> &mdash; количество проходов блума для одного кадра (больше &mdash; сильнее эффект)<br />
+						<b>/r_bloomSceneIntensity</b> &mdash; яркость сцены (базового кадра) <br />
+						<b>/r_bloomSaturation</b> &mdash; насыщенность сцены <br />
+						<b>/r_bloomIntensity</b> &mdash; яркость блума <br />
+						<b>/r_bloomSaturation</b> &mdash; насыщенность блума <br />
+						<b>/r_bloomBrightThreshold</b> &mdash; порог яркости пикселя для обретания блума <br />
+						<b>/r_bloomTextureScale</b> &mdash; соотношение разера текстуры блума к размеру кадра <br />
+						<b>/r_bloomDebug</b> &mdash; отладка: отрисовка блума в отдельном "окне", не накладывая на сцену <br />
+					</code>
+				</p>
 
 			<h2>Работа с демо-файлами</h2>
 			<h3>Нарезка демо-файлов</h3>
