@@ -11,9 +11,13 @@ h1, h2, h3 {
 }
 
 #wrapper {
+	background: url( '../images/dark_wall.png' );
 	margin: 25px auto;
 	width: 960px;
 	text-align: justify;
+
+	padding: 20px;
+	box-shadow: 0 0 15px #000;
 }
 
 code {
