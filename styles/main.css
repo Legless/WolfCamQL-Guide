@@ -84,6 +84,11 @@ img.inline {
 
 .img-wrapper img {
 	width: 400px;
+	transition: all .1s;
+}
+
+.img-wrapper img:hover {
+	box-shadow: 0 0 10px #000;
 }
 
 .img-box {
