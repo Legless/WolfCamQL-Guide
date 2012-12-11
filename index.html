@@ -170,6 +170,60 @@
 				<p>...</p>
 
 			<h2>Продвинутая настройка</h2>
+			<h3>Мясо из Q3</h3>
+				<div class="img-wrapper">
+					<a href="images/screenshots/q3gibs.jpg" target="_blank"><img src="images/thumbs/q3gibs.jpg" /></a>
+				</div>	
+				<p>
+					Те, кому надоели гламурные искры из QL, могут воспользоваться возможностью включить мясо (гибсы) из Q3.
+				</p>
+				<p>
+					Для этого нужно скопировать следующие файлы из pak0 Quake3: 
+					<code class="box">
+						gfx/damage/blood_spurt.tga<br />
+						gfx/damage/blood_stain.tga<br />
+						models/gibs/gibs.jpg<br />
+						models/gibs/leg.md3<br />
+						models/gibs/skull.md3<br />
+						models/gibs/abdomen.md3<br />
+						models/gibs/chest.md3<br />
+						models/gibs/intestine.md3<br />
+						models/gibs/brain.md3<br />
+						models/gibs/foot.md3<br />
+						models/gibs/forearm.md3<br />
+						models/gibs/arm.md3<br />
+						models/gibs/fist.md3<br />
+						sound/player/gibimp1.wav<br />
+						sound/player/gibimp2.wav<br />
+						sound/player/gibimp3.wav<br />
+						sound/player/gibsplt1.wav<br />
+					</code>
+
+					И поместить их соответственно в: 
+					<code class="box">
+						wolfcamql/wolfcam-ql/gfx/damageq3/blood_spurt.tga<br />
+						wolfcamql/wolfcam-ql/gfx/damageq3/blood_stain.tga<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/gibs.jpg<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/leg.md3<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/skull.md3<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/abdomen.md3<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/chest.md3<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/intestine.md3<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/brain.md3<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/foot.md3<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/forearm.md3<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/arm.md3<br />
+						wolfcamql/wolfcam-ql/models/gibsq3/fist.md3<br />
+						wolfcamql/wolfcam-ql/sound/player/gibimp1.wav<br />
+						wolfcamql/wolfcam-ql/sound/player/gibimp2.wav<br />
+						wolfcamql/wolfcam-ql/sound/player/gibimp3.wav<br />
+						wolfcamql/wolfcam-ql/sound/player/gibsplt1.wav<br />
+					</code>
+				</p>
+				<p>
+					Гибсы включаются переменной <code>/cl_enableQ3Gibs 1</code>.
+				</p>
+
 			<h3>Нестандартные модели</h3>
 				<div class="img-wrapper">
 					<a href="images/screenshots/custommodels.jpg" target="_blank"><img src="images/thumbs/custommodels.jpg" /></a>
