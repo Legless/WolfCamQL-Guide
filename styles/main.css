@@ -99,7 +99,6 @@ img.inline {
 
 .img-box img {
 	width: 300px;
-	clear: both;
 }
 
 p {
@@ -111,4 +110,10 @@ p {
 #toc {
 	border: 1px solid #000;
 	width: 600px;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
 }
