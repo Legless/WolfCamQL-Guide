@@ -45,13 +45,14 @@
 				</p>
 				<p>
 					После чего нужно скопировать из папки QuakeLive все паки. Для этого переходим в:
-					<ul>
-						<li>Vista/7/8: <br /> <code>%AppData%\..\LocalLow\id Software\quakelive\baseq3</code></li>
-						<li>XP: <br /> <code>%appdata%\id Software\quakelive\baseq3</code></li>
-						<li>Linux: <br /> <code>~/.quakelive/quakelive/baseq3/</code></li>
-						<li>OSX: <br /> <code>~/Library/Application/Support/Quakelive/baseq3/</code></li>
-					</ul>
-
+				</p>
+				<ul>
+					<li>Vista/7/8: <br /> <code>%AppData%\..\LocalLow\id Software\quakelive\baseq3</code></li>
+					<li>XP: <br /> <code>%appdata%\id Software\quakelive\baseq3</code></li>
+					<li>Linux: <br /> <code>~/.quakelive/quakelive/baseq3/</code></li>
+					<li>OSX: <br /> <code>~/Library/Application/Support/Quakelive/baseq3/</code></li>
+				</ul>
+				<p>
 					И копируем оттуда все файлы в папку /baseq3/ в директории, в которую распакован WolfCam.
 				</p>
 
@@ -295,14 +296,14 @@
 				<p>
 					Bloom (блум) &mdash это один из эффектов постобработки, который делает яркие части изображения ещё ярче, создавая вокруг них свечение.
 					Принцип работы блума заключается в следующем:
-					<ol>
-						<li>Текущий кадр сохраняется в отдельную текстуру</li>
-						<li>Отсекаются недостаточные по яркости пиксели</li>
-						<li>Текстура размывается</li>
-						<li>Выолняется цветокоррекция исходного кадра и текстуры блума: изменяются их насыщенности и яркости</li>
-						<li>Размытая текстура блума складывается с текущим кадром</li>
-					</ol>
 				</p>
+				<ol>
+					<li>Текущий кадр сохраняется в отдельную текстуру</li>
+					<li>Отсекаются недостаточные по яркости пиксели</li>
+					<li>Текстура размывается</li>
+					<li>Выолняется цветокоррекция исходного кадра и текстуры блума: изменяются их насыщенности и яркости</li>
+					<li>Размытая текстура блума складывается с текущим кадром</li>
+				</ol>
 				<p>
 					В Вульфкаме блум включается перемкнной <code>/r_enableBloom 1</code>, и регулируется следующими переменными:
 					<code class="box">
