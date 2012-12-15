@@ -3,7 +3,7 @@ body {
 	background-image: url( ../images/asfalt.png );
 	background-attachment: fixed;
 
-	font-family: Scada;
+	font-family: Scada, sans-serif;
 	color: #eee;
 	text-shadow: 1px 1px 2px #000;
 	font-size: 1em;
@@ -13,7 +13,7 @@ h1, h2, h3 {
 	color: #fed;
 	font-size: 1.8em;
 	border-bottom: 1px solid #333;
-	font-family: play;
+	font-family: Play, sans-serif;
 }
 
 h2 {
@@ -37,7 +37,7 @@ h3 {
 }
 
 code {
-	font-family: "Ubuntu Mono";
+	font-family: "Ubuntu Mono", monospace;
 	color: #ddf;
 	padding: 3px;
 	display: inline;
@@ -56,7 +56,7 @@ code.box {
 a {
 	color: #fcc;
 	text-decoration: none;
-	font-family: Play;
+	font-family: Play, sans-serif;
 }
 
 a:hover {
