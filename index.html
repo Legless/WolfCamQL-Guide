@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<link href="styles/normalize.css" rel="stylesheet" type="text/css" />
 		<link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Scada|Play:700&amp;subset=latin,cyrillic,cyrillic-ext,latin-ext" rel="stylesheet" type="text/css" />
 		<link href="styles/main.css" rel="stylesheet" type="text/css" />
 
@@ -93,6 +94,7 @@
 				<div class="clearfix img-box">
 					<a href="images/screenshots/widescreen4.jpg" target="_blank"><img src="images/thumbs/widescreen4.jpg" width="300" height="169" alt="" /></a>
 					<a href="images/screenshots/widescreen2.jpg" target="_blank"><img src="images/thumbs/widescreen2.jpg" width="300" height="169" alt="" /></a>
+					<br>
 					<a href="images/screenshots/widescreen3.jpg" target="_blank"><img src="images/thumbs/widescreen3.jpg" width="300" height="169" alt="" /></a>
 					<a href="images/screenshots/widescreen1.jpg" target="_blank"><img src="images/thumbs/widescreen1.jpg" width="300" height="169" alt="" /></a>
 				</div>
@@ -272,13 +274,17 @@
 
 				<p>
 					Делается это очень просто: берём оба видео и создаём новую композицию с ними так, что бы видео с depth-буффером было снизу.
-					<img src="images/screenshots/dof-ae-1.png" class="inline" width="589" height="92" alt="" />
 				</p>
+				<div class="img-box">
+					<img src="images/screenshots/dof-ae-1.png" width="589" height="92" alt="" />
+				</div>
 
 				<p>
 					К верхнему, цветному видео применяем эффект Lens Blur, указав в качестве параметра <b>Depth Map Layer</b> слой с Z-буффером.
-					<img src="images/screenshots/dof-ae-2.png" class="inline" width="364" height="187" alt="" />
 				</p>
+				<div class="img-box">
+					<img src="images/screenshots/dof-ae-2.png" width="364" height="187" alt="" />
+				</div>
 				<p>
 					При необходимости, регулруем фокус параметром <b>Blur Focal Distance</b>, силу размытия &mdash; <b>Iris Radius</b> и форму боке — <b>Iris Shape</b>.
 				</p>

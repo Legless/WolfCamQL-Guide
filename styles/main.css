@@ -4,7 +4,6 @@ body {
 	background-attachment: fixed;
 	color: #eee;
 	text-shadow: 1px 1px 2px #000;
-	font-size: 1em;
 	font-family: Scada, sans-serif;
 }
 
@@ -35,7 +34,6 @@ h3 {
 }
 
 code {
-	display: inline;
 	padding: 3px;
 	color: #ddf;
 	font-family: "Ubuntu Mono", monospace;
@@ -62,26 +60,16 @@ a:hover {
 }
 
 img {
-	border: none;
 	box-shadow: 0 0 3px #000;
-}
-
-img.inline {
-	display: block;
-	margin: auto;
-	box-shadow: 0 0 12px #000;
 }
 
 .img-wrapper {
 	float: right;
 	margin-left: 20px;
-	padding: 0;
 	width: 400px;
-	height: auto;
 }
 
 .img-wrapper img {
-	width: 400px;
 	transition: all .1s;
 }
 
@@ -90,18 +78,15 @@ img.inline {
 }
 
 .img-box {
-	display: block;
-	margin: auto;
-	width: 920px;
+	text-align: center;
 }
 
 .img-box img {
-	width: 300px;
+	box-shadow: 0 0 10px #000;
 }
 
 p {
-	margin: 0;
-	margin-bottom: 10px;
+	margin: 0 0 10px;
 	padding: 0 20px;
 }
 
