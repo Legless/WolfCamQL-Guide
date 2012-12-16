@@ -2,18 +2,16 @@ body {
 	background-color: #000;
 	background-image: url( ../images/asfalt.png );
 	background-attachment: fixed;
-
-	font-family: Scada;
 	color: #eee;
 	text-shadow: 1px 1px 2px #000;
-	font-size: 1em;
+	font-family: Scada, sans-serif;
 }
 
 h1, h2, h3 {
+	border-bottom: 1px solid #333;
 	color: #fed;
 	font-size: 1.8em;
-	border-bottom: 1px solid #333;
-	font-family: play;
+	font-family: Play, sans-serif;
 }
 
 h2 {
@@ -25,38 +23,36 @@ h3 {
 }
 
 #wrapper {
-	width: 920px;
 	margin: auto;
 	padding: 20px;
+	width: 920px;
 	border: 1px solid #000;
 	border-radius: 3px;
-	box-shadow: 0 0 15px #000;
 	background-image: url( ../images/dark_wall.png );
-
+	box-shadow: 0 0 15px #000;
 	text-align: justify;
 }
 
 code {
-	font-family: "Ubuntu Mono";
-	color: #ddf;
 	padding: 3px;
-	display: inline;
+	color: #ddf;
+	font-family: "Ubuntu Mono", monospace;
 }
 
 code.box {
 	display: block;
 	margin: 5px;
-	border: 1px solid #222;
 	padding: 9px;
-	box-shadow: 0 0 5px #000 inset;
-	background-color: rgba( 0, 0, 0, 0.4 );
 	width: 460px;
+	border: 1px solid #222;
+	background-color: rgba( 0, 0, 0, 0.4 );
+	box-shadow: 0 0 5px #000 inset;
 }
 
 a {
 	color: #fcc;
 	text-decoration: none;
-	font-family: Play;
+	font-family: Play, sans-serif;
 }
 
 a:hover {
@@ -65,25 +61,15 @@ a:hover {
 
 img {
 	box-shadow: 0 0 3px #000;
-	border: none;
-}
-
-img.inline {
-	display: block;
-	margin: auto;
-	box-shadow: 0 0 12px #000;
 }
 
 .img-wrapper {
-	width: 400px;
 	float: right;
-	height: auto;
-	padding: 0;
 	margin-left: 20px;
+	width: 400px;
 }
 
 .img-wrapper img {
-	width: 400px;
 	transition: all .1s;
 }
 
@@ -92,23 +78,25 @@ img.inline {
 }
 
 .img-box {
-	display: block;
-	width: 920px;
-	margin: auto;
+	text-align: center;
 }
 
 .img-box img {
-	width: 300px;
-	clear: both;
+	box-shadow: 0 0 10px #000;
 }
 
 p {
-	margin: 0;
-	margin-bottom: 10px;
+	margin: 0 0 10px;
 	padding: 0 20px;
 }
 
 #toc {
-	border: 1px solid #000;
 	width: 600px;
+	border: 1px solid #000;
+}
+
+.clearfix:after {
+	display: table;
+	clear: both;
+	content: "";
 }
