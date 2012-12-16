@@ -2,17 +2,16 @@ body {
 	background-color: #000;
 	background-image: url( ../images/asfalt.png );
 	background-attachment: fixed;
-
-	font-family: Scada, sans-serif;
 	color: #eee;
 	text-shadow: 1px 1px 2px #000;
 	font-size: 1em;
+	font-family: Scada, sans-serif;
 }
 
 h1, h2, h3 {
+	border-bottom: 1px solid #333;
 	color: #fed;
 	font-size: 1.8em;
-	border-bottom: 1px solid #333;
 	font-family: Play, sans-serif;
 }
 
@@ -25,32 +24,31 @@ h3 {
 }
 
 #wrapper {
-	width: 920px;
 	margin: auto;
 	padding: 20px;
+	width: 920px;
 	border: 1px solid #000;
 	border-radius: 3px;
-	box-shadow: 0 0 15px #000;
 	background-image: url( ../images/dark_wall.png );
-
+	box-shadow: 0 0 15px #000;
 	text-align: justify;
 }
 
 code {
-	font-family: "Ubuntu Mono", monospace;
-	color: #ddf;
-	padding: 3px;
 	display: inline;
+	padding: 3px;
+	color: #ddf;
+	font-family: "Ubuntu Mono", monospace;
 }
 
 code.box {
 	display: block;
 	margin: 5px;
-	border: 1px solid #222;
 	padding: 9px;
-	box-shadow: 0 0 5px #000 inset;
-	background-color: rgba( 0, 0, 0, 0.4 );
 	width: 460px;
+	border: 1px solid #222;
+	background-color: rgba( 0, 0, 0, 0.4 );
+	box-shadow: 0 0 5px #000 inset;
 }
 
 a {
@@ -64,8 +62,8 @@ a:hover {
 }
 
 img {
-	box-shadow: 0 0 3px #000;
 	border: none;
+	box-shadow: 0 0 3px #000;
 }
 
 img.inline {
@@ -75,11 +73,11 @@ img.inline {
 }
 
 .img-wrapper {
-	width: 400px;
 	float: right;
-	height: auto;
-	padding: 0;
 	margin-left: 20px;
+	padding: 0;
+	width: 400px;
+	height: auto;
 }
 
 .img-wrapper img {
@@ -93,8 +91,8 @@ img.inline {
 
 .img-box {
 	display: block;
-	width: 920px;
 	margin: auto;
+	width: 920px;
 }
 
 .img-box img {
@@ -108,12 +106,12 @@ p {
 }
 
 #toc {
-	border: 1px solid #000;
 	width: 600px;
+	border: 1px solid #000;
 }
 
 .clearfix:after {
-	content: "";
 	display: table;
 	clear: both;
+	content: "";
 }
