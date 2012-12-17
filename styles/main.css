@@ -1,13 +1,18 @@
 body {
 	background-color: #000;
-	background-image: url( ../images/asfalt.png );
+	background-image: url("../images/asfalt.png");
 	background-attachment: fixed;
 	color: #eee;
 	text-shadow: 1px 1px 2px #000;
 	font-family: Scada, sans-serif;
 }
 
+nav, section {
+	padding: 20px 0;
+}
+
 h1, h2, h3 {
+	margin: 0 0 15px;
 	border-bottom: 1px solid #333;
 	color: #fed;
 	font-size: 1.8em;
@@ -27,8 +32,12 @@ h3 {
 	padding: 20px;
 	width: 920px;
 	border: 1px solid #000;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
 	border-radius: 3px;
-	background-image: url( ../images/dark_wall.png );
+	background-image: url("../images/dark_wall.png");
+	-webkit-box-shadow: 0 0 15px #000;
+	-moz-box-shadow: 0 0 15px #000;
 	box-shadow: 0 0 15px #000;
 	text-align: justify;
 }
@@ -45,7 +54,9 @@ code.box {
 	padding: 9px;
 	width: 460px;
 	border: 1px solid #222;
-	background-color: rgba( 0, 0, 0, 0.4 );
+	background-color: rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 0 5px #000 inset;
+	-moz-box-shadow: 0 0 5px #000 inset;
 	box-shadow: 0 0 5px #000 inset;
 }
 
@@ -60,6 +71,8 @@ a:hover {
 }
 
 img {
+	-webkit-box-shadow: 0 0 3px #000;
+	-moz-box-shadow: 0 0 3px #000;
 	box-shadow: 0 0 3px #000;
 }
 
@@ -70,10 +83,15 @@ img {
 }
 
 .img-wrapper img {
-	transition: all .1s;
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	-o-transition: all 0.1s;
+	transition: all 0.1s;
 }
 
 .img-wrapper img:hover {
+	-webkit-box-shadow: 0 0 10px #000;
+	-moz-box-shadow: 0 0 10px #000;
 	box-shadow: 0 0 10px #000;
 }
 
@@ -82,6 +100,8 @@ img {
 }
 
 .img-box img {
+	-webkit-box-shadow: 0 0 10px #000;
+	-moz-box-shadow: 0 0 10px #000;
 	box-shadow: 0 0 10px #000;
 }
 
