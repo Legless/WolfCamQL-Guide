@@ -110,13 +110,39 @@ p {
 	padding: 0 20px;
 }
 
-#toc {
-	width: 600px;
-	border: 1px solid #000;
-}
-
 .clearfix:after {
 	display: table;
 	clear: both;
 	content: "";
+}
+
+table {
+	margin: 15px 30px;
+	border: 1px solid #333;
+	width: 800px;
+
+	box-shadow: 0 0 5px #000;
+}
+
+tr {
+	border: 1px solid #333;	
+	height: 48px;
+
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	-o-transition: all 0.1s;
+	transition: all 0.1s;
+}
+
+tr:hover {
+	background-color: rgba(255, 255, 255, 0.02);
+}
+
+th {
+	text-align: center;
+	font-size: 105%;
+}
+
+td {
+	font-size: 90%;
 }

@@ -357,7 +357,114 @@
 
 			<section id="fx-system">
 				<h2>FX-подсистема</h2>
-				<p>...</p>
+				<p>
+					FX-скрипты используются вульфкамом для кастомизации некоторых событий в сцене. В Q3/QL все эти эфекты жестко заданы в исходном коде, так что для их изменения необходима перекомпиляция движка. Wolfcam (и q3mme) может привязывать скрипты к определённым игровым событиям (взырвы снарядов) и сущностям (игроки и снаряды). Эти скрипты могут быть перезаписаны под свои нужды.
+				</p>
+				<p>
+					Переменная <code>/cg_fxfile</code> содержит название и путь к файлу с эффектами. Перезагружаются скрипты командой <code>/fxload</code>.
+				</p>
+
+				<h3>Пример скрипта</h3>
+					<p>
+						Пример скрипта, вызываемого когда игрок чатится:
+						<code class="box">
+							player/talk {<br />
+							size		10<br />
+							shader		sprites/balloon3<br />
+							Sprite<br />
+							}
+						</code>
+
+						Во-первых, <code>player/talk</code> &mdash; это название скрипта, которое говорит игре, к какому событию его привязывать. Все названия перечислены ниже. Далее в фигурных скобках идет тело скрипта. Код присваивает значение переменным, означающим размер и шейдер сущности, и вызывает команду <code>sprite</code>, рисующую в сцене картинку, повёрнутую к камере (спрайт), используя переменные <code>size</code> (размер), <code>shader</code> (шейдер) и <code>origin</code> (положение в пространстве). Хоть переменная <code>origin</code> и не задана в теле скрипта, она передаётся в него движком Вульфкама.
+					</p>
+
+				<h3>Названия скриптов</h3>
+					<p>
+						Каждое событие, которое обрабатывается fx-подсистемой, привязано к определённому названий скрипта. Ниже находится список этих названий, описание события, вызывающего их и список аргументом, передаваемых в скрипт. 
+					</p>
+
+					<table>
+						<tr><th colspan="3">События для оружия</th></tr>
+						<tr><th>Название</th>
+							<th>Событие</th>
+							<th>Аргументы</th></tr>
+						<tr><th>weapon/X/flash</th>
+							<td>Вызывается каждый фрейм в течение 20 мс. после выстрела оружия</td>
+							<td>origin, velocity, axis, life</td></tr>
+						<tr><th>weapon/X/fire</th>
+							<td>Из оружия выстрелили</td>
+							<td>origin, direction, velocity</td></tr>
+						<tr><th>weapon/X/impact</th>
+							<td>Пуля достигла стены или взорвался снаряд</td>
+							<td>origin, direction</td></tr>
+						<tr><th>weapon/X/impactflesh</th>
+							<td>Пуля или снаряд попали в игрока</td>
+							<td>origin, direction</td></tr>
+						<tr><th>weapon/X/projectile</th>
+							<td>Вызывается каждый фрейм для снарядов</td>
+							<td>origin, velocity, direction, angles</td></tr>
+						<tr><th>weapon/X/trail</th>
+							<td>Вызывается каждый фрейм для снарядов или единожды для hitscan-оружия</td>
+							<td>origin, velocity, axis, life</td></tr>
+						<tr><th>weapon/X/bubbles</th>
+							<td>Вызывается при выстреле из оружия под водой</td>
+							<td>origin</td></tr>
+					</table>
+
+					<p>
+						На месте <b>x</b> в этих скриптах может находится любое из следующих оружий: 
+						<code>common (для всех оружий), rocket, rail, grenade, machinegun, shotgun, plasma, bfg, gauntlet, lightning, grapple.</code>
+					</p>
+
+
+					<table>
+						<tr><th colspan="3">Другие события</th></tr>
+						<tr><th>Название</th>
+							<th>Событие</th>
+							<th>Аргументы</th></tr>
+						<tr><th>player/gibbed</th>
+							<td>Игрок убит, и его труп должен взорваться</td>
+							<td>origin, velocity</td></tr>
+						<tr><th>player/teleportIn</th>
+							<td>Игрок входит в телепорт</td>
+							<td>origin</td></tr>
+						<tr><th>player/teleportOut</th>
+							<td>Выходит из телепорта</td>
+							<td>origin</td></tr>
+						<tr><th>player/haste</th>
+							<td>У игрока активный Haste</td>
+							<td>origin</td></tr>
+						<tr><th>player/talk</th>
+							<td>Игрок открыл чат</td>
+							<td>origin</td></tr>
+						<tr><th>player/connection</th>
+							<td>Игрок завис</td>
+							<td>origin</td></tr>
+						<tr><th>player/impressive</th>
+							<td>Игрок получил медаль Impressive</td>
+							<td>origin</td></tr>
+						<tr><th>player/excellent</th>
+							<td>Excellent</td>
+							<td>origin</td></tr>
+						<tr><th>player/gauntlet</th>
+							<td>Gauntlet Humiliation</td>
+							<td>origin</td></tr>
+						<tr><th>player/capture</th>
+							<td>Capture (принёс флаг)</td>
+							<td>origin</td></tr>
+						<tr><th>player/assist</th>
+							<td>Assist </td>
+							<td>origin</td></tr>
+					</table>
+
+				<h3>Команды</h3>
+				<p>
+					Команды фактически добавляют в сцену эффекты, такие как звук, модели, спрайты и т.д. Остальные строки скрипта всего-лишь настраивают параметры команд.
+				</p>
+				<dl>
+					<dt></dt>
+					<dd></dd>
+				</dl>
 			</section>
 
 			<section id="small-wiles">
