@@ -398,10 +398,10 @@
 							<th>Событие</th>
 							<th>Аргументы</th></tr>
 						<tr><th>weapon/X/flash</th>
-							<td>Вызывается каждый фрейм в течение 20 мс. после выстрела оружия</td>
+							<td>Вызывается каждый фрейм в течение 25 мс. после выстрела оружия</td>
 							<td>origin, velocity, axis, life</td></tr>
 						<tr><th>weapon/X/fire</th>
-							<td>Из оружия выстрелили</td>
+							<td>Вызывается один раз при выстреле из оружия</td>
 							<td>origin, direction, velocity</td></tr>
 						<tr><th>weapon/X/impact</th>
 							<td>Пуля достигла стены или взорвался снаряд</td>
@@ -418,6 +418,12 @@
 						<tr><th>weapon/X/bubbles</th>
 							<td>Вызывается при выстреле из оружия под водой</td>
 							<td>origin</td></tr>
+						<tr><th>common/jumpPad</th>
+							<td>Игрок коснулся джамппада</td>
+							<td>origin</td></tr>
+						<tr><th>common/headShot</th>
+							<td>В игрока попали headshot</td>
+							<td>origin</td></tr>							
 					</table>
 
 					<p>
@@ -434,14 +440,18 @@
 						<tr><th>player/gibbed</th>
 							<td>Игрок убит, и его труп должен взорваться</td>
 							<td>origin, velocity</td></tr>
+						<tr><th>player/thawed</th>
+							<td>Игрока разморозили в режиме Freeze Tag</td>
+							<td>origin, velocity</td></tr>
 						<tr><th>player/teleportIn</th>
 							<td>Игрок входит в телепорт</td>
 							<td>origin</td></tr>
 						<tr><th>player/teleportOut</th>
 							<td>Выходит из телепорта</td>
 							<td>origin</td></tr>
-						<tr><th>player/haste</th>
-							<td>У игрока активный Haste</td>
+						<tr><th>player/haste, <br />
+								player/flight</th>
+							<td>У игрока активнен соответствующий Power-Up</td>
 							<td>origin</td></tr>
 						<tr><th>player/talk</th>
 							<td>Игрок открыл чат</td>
@@ -449,108 +459,136 @@
 						<tr><th>player/connection</th>
 							<td>Игрок завис</td>
 							<td>origin</td></tr>
-						<tr><th>player/impressive</th>
-							<td>Игрок получил медаль Impressive</td>
+						<tr><th>player/impressive, <br /> 
+								player/excellent, <br /> 
+								player/gauntlet, <br /> 
+								player/capture, <br /> 
+								player/assist</th>
+							<td>Игрок получил соответствующую медаль</td>
 							<td>origin</td></tr>
-						<tr><th>player/excellent</th>
-							<td>Excellent</td>
-							<td>origin</td></tr>
-						<tr><th>player/gauntlet</th>
-							<td>Gauntlet Humiliation</td>
-							<td>origin</td></tr>
-						<tr><th>player/capture</th>
-							<td>Capture (принёс флаг)</td>
-							<td>origin</td></tr>
-						<tr><th>player/assist</th>
-							<td>Assist </td>
+						<tr><th>player/head/trail, <br /> 
+								player/torso/trail, <br /> 
+								player/legs/trail</th>
+							<td>Выполняется каждый фрейм для соответствующей части тела каждого игрока</td>
 							<td>origin</td></tr>
 					</table>
 
 				<h3>Команды</h3>
-				<p>
-					Команды фактически добавляют в сцену эффекты, такие как звук, модели, спрайты и т.д. Остальные строки скрипта всего-лишь настраивают параметры команд.
-				</p>
-				<dl>
-					<dt>Sprite</dt>
-					<dd>
-						Добавляет в сцену квадратный полигон, всегда повёрнутый к камере. <br />
-						Аргументы: <code>renderfx</code>. <br />
-						Используемые переменные: <code>origin, shader, size, angle, color</code>.
-					</dd>
+					<p>
+						Команды фактически добавляют в сцену эффекты, такие как звук, модели, спрайты и т.д. Остальные строки скрипта всего-лишь настраивают параметры команд.
+					</p>
+					<dl>
+						<dt>Sprite</dt>
+						<dd>
+							Добавляет в сцену квадратный полигон, всегда повёрнутый к камере. <br />
+							Аргументы: <code>renderfx</code>. <br />
+							Используемые переменные: <code>origin, shader, size, angle, color</code>.
+						</dd>
 
-					<dt>Quad</dt>
-					<dd>
-						Добавляет в сцену полигон, нормаль которого направлена по вектору <code>dir</code>. <br />
-						Аргументы: <code>renderfx</code>. <br />
-						Используемые переменные: <code>origin, shader, size, angle, color</code>.
-					</dd>
+						<dt>Quad</dt>
+						<dd>
+							Добавляет в сцену полигон, нормаль которого направлена по вектору <code>dir</code>. <br />
+							Аргументы: <code>renderfx</code>. <br />
+							Используемые переменные: <code>origin, shader, size, angle, color</code>.
+						</dd>
 
-					<dt>Beam</dt>
-					<dd>
-						Используется для эффектов рейлгана и шафта. Шейдер растянут между <code>origin</code> и <code>origin+dir</code>. Толщина луча установлена в <code>size</code>. Луч всегда повёрнут к камере. <br />
-						Используемые переменные: origin, dir, shader, size, angle, color.
-					</dd>
+						<dt>Beam</dt>
+						<dd>
+							Используется для эффектов рейлгана и шафта. Шейдер растянут между <code>origin</code> и <code>origin+dir</code>. Толщина луча установлена в <code>size</code>. Луч всегда повёрнут к камере. <br />
+							Используемые переменные: <code>origin, dir, shader, size, angle, color</code>.
+						</dd>
 
-					<dt>Spark</dt>
-					<dd>
-						Добавляет "искорку" — прямоугольный полигон, повёрнутый к камере. Его длинна выставляется переменной <code>size</code>, ширина &mdash; <code>width</code>. Один из концов направлен по вектору <code>velocity</code>.<br />
-						Используемые переменные: <code>origin, velocity, size, width, shader, color</code>.
-					</dd>
+						<dt>Spark</dt>
+						<dd>
+							Добавляет "искорку" — прямоугольный полигон, повёрнутый к камере. Его длинна выставляется переменной <code>size</code>, ширина &mdash; <code>width</code>. Один из концов направлен по вектору <code>velocity</code>.<br />
+							Используемые переменные: <code>origin, velocity, size, width, shader, color</code>.
+						</dd>
 
-					<dt>Decal</dt>
-					<dd>
-						.<br />
-						Используемые переменные: <code></code>.
-					</dd>
+						<dt>Decal</dt>
+						<dd>
+							Декали используютя для помещения шейдера на поверхности карты. Шейдер остаётся на поверхности в течение <code>life</code> милисекунд. Деколь центрирована по вектору <code>origin</code>, её нормаль направлена по <code>dir</code>.<br />
+							Аргументы: <code>life</code> &mdash; время жизни деколи в милисекундах. <br />
+							Используемые переменные: <code>origin, shader, dir, color, rotate, size</code>.
+						</dd>
 
-					<dt>anglesModel</dt>
-					<dd>
-						.<br />
-						Используемые переменные: <code></code>.
-					</dd>
+						<dt>dirModel</dt>
+						<dd>
+							Добавляет в сцену модель, заданную в переменной <code>model</code>, направленную по вектору <code>dir</code>.<br />
+							Используемые переменные: <code>origin, dir, model, shader, rotate, size, color</code>.
+						</dd>
 
-					<dt>axisModel</dt>
-					<dd>
-						.<br />
-						Используемые переменные: <code></code>.
-					</dd>
+						<dt>Light</dt>
+						<dd>
+							Добавляет в сцену свет в позиции <code>origin</code>.<br />
+							Используемые переменные: <code>origin, size, color </code>.
+						</dd>
 
-					<dt>dirModel</dt>
-					<dd>
-						.<br />
-						Используемые переменные: <code></code>.
-					</dd>
+						<dt>Sound</dt>
+						<dd>
+							Проигрывает звук <code>soundname</code>.<br />
+							Аргументы: <code>soundname</code>.<br />
+							Используемые переменные: <code>origin</code>
+						</dd>
 
-					<dt>Light</dt>
-					<dd>
-						.<br />
-						Используемые переменные: <code></code>.
-					</dd>
+						<dt>loopSound</dt>
+						<dd>
+							Проигрывает звук <code>soundname</code> в бесконечном цикле.<br />
+							Аргументы: <code>soundname</code>.<br />
+							Используемые переменные: <code>origin</code>
+						</dd>
 
-					<dt>Sound</dt>
-					<dd>
-						.<br />
-						Используемые переменные: <code></code>.
-					</dd>
+						<dt>Vibrate</dt>
+						<dd>
+							Создаёт вибрацию камеры с силой <code>strength</code> в точке <code>origin</code>.<br />
+							Аргументы: <code>strength</code>.<br />
+							Используемые переменные: <code>origin</code>.
+						</dd>
+					</dl>
 
-					<dt>loopSound</dt>
-					<dd>
-						.<br />
-						Используемые переменные: <code></code>.
-					</dd>
 
-					<dt>soundList</dt>
-					<dd>
-						.<br />
-						Используемые переменные: <code></code>.
-					</dd>
+				<h3>Блоки</h3>
+					<dl>
+						<dt>repeat (math) { ... }</dt>
+						<dd>Выполняет блок кода <code>math</code> раз, в теченее которых переменная <code>loop</code> изменяется от 0 до 1.</dd>
 
-					<dt>Vibrate</dt>
-					<dd>
-						.<br />
-						Используемые переменные: <code></code>.
-					</dd>
-				</dl>
+						<dt>emitter (math) { ... }</dt>
+						<dd>Любая сущность, созданная в этом блоке, будет жить в теченее <code>math</code> секунд. Переменная <code>life</code> хранит её время жизни в секундах, <code>lerp</code> &mdash; стремится от 0 до 1 в теченее её жизни.</dd>
+
+						<dt>if (math) { ... }</dt>
+						<dd>Выполняет блок кода только если условие <code>math</code> истинно (не равно нолю).</dd>
+
+						<dt>distance (math) { ... }</dt>
+						<dd>Выполняет блок кода через каждые <code>math</code> юнитов расстояния. Не имеет смысла в событийных скриптах (таких, как <code>weapon/impact</code>) и должен использоваться только в событиях типа <code>weapon/trail</code>.</dd>
+
+						<dt>interval (math) { ... }</dt>
+						<dd>Выполняет блок кода каждые <code>math</code> секунд. Как и предыдущий блок, не имеет смысла в событийных скриптах.</dd>
+					</dl>
+
+				<h3>Переменные</h3>
+					<p>Переменные создают контекст для скриптовых комманд. Бывают трёх типов: числовые, векторные и строковые.</p>
+				
+				<h4>Числовые</h4>				
+					<ul>
+						<li>colorFade </li>
+						<li>colorScale </li>
+						<li>colorHue </li>
+						<li>alphaFade </li>
+						<li>red </li>
+						<li>green </li>
+						<li>blue </li>
+						<li>alpha </li>
+						<li>size</li>
+					</ul>
+
+				<h4>Векторы</h4>				
+					<ul>
+						
+					</ul>
+
+				<h4>Строковые</h4>				
+					<ul>
+						
+					</ul>
 			</section>
 
 			<section id="small-wiles">
