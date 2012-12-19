@@ -119,7 +119,7 @@ p {
 table {
 	margin: 15px 30px;
 	border: 1px solid #333;
-	width: 800px;
+	width: 850px;
 
 	box-shadow: 0 0 5px #000;
 }
@@ -145,4 +145,20 @@ th {
 
 td {
 	font-size: 90%;
+	padding: 10px;
+}
+
+dl {
+	margin: 0px 25px;
+}
+
+dt {
+	font-family: Play, sans-serif;
+	font-size: 115%;
+	color: #fed;
+}
+
+dd {
+	margin-left: 15px;
+	margin-bottom: 15px;
 }

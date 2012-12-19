@@ -462,8 +462,85 @@
 					Команды фактически добавляют в сцену эффекты, такие как звук, модели, спрайты и т.д. Остальные строки скрипта всего-лишь настраивают параметры команд.
 				</p>
 				<dl>
-					<dt></dt>
-					<dd></dd>
+					<dt>Sprite</dt>
+					<dd>
+						Добавляет в сцену квадратный полигон, всегда повёрнутый к камере. <br />
+						Аргументы: <code>renderfx</code>. <br />
+						Используемые переменные: <code>origin, shader, size, angle, color</code>.
+					</dd>
+
+					<dt>Quad</dt>
+					<dd>
+						Добавляет в сцену полигон, нормаль которого направлена по вектору <code>dir</code>. <br />
+						Аргументы: <code>renderfx</code>. <br />
+						Используемые переменные: <code>origin, shader, size, angle, color</code>.
+					</dd>
+
+					<dt>Beam</dt>
+					<dd>
+						Используется для эффектов рейлгана и шафта. Шейдер растянут между <code>origin</code> и <code>origin+dir</code>. Толщина луча установлена в <code>size</code>. Луч всегда повёрнут к камере. <br />
+						Используемые переменные: origin, dir, shader, size, angle, color.
+					</dd>
+
+					<dt>Spark</dt>
+					<dd>
+						Добавляет "искорку" — прямоугольный полигон, повёрнутый к камере. Его длинна выставляется переменной <code>size</code>, ширина &mdash; <code>width</code>. Один из концов направлен по вектору <code>velocity</code>.<br />
+						Используемые переменные: <code>origin, velocity, size, width, shader, color</code>.
+					</dd>
+
+					<dt>Decal</dt>
+					<dd>
+						.<br />
+						Используемые переменные: <code></code>.
+					</dd>
+
+					<dt>anglesModel</dt>
+					<dd>
+						.<br />
+						Используемые переменные: <code></code>.
+					</dd>
+
+					<dt>axisModel</dt>
+					<dd>
+						.<br />
+						Используемые переменные: <code></code>.
+					</dd>
+
+					<dt>dirModel</dt>
+					<dd>
+						.<br />
+						Используемые переменные: <code></code>.
+					</dd>
+
+					<dt>Light</dt>
+					<dd>
+						.<br />
+						Используемые переменные: <code></code>.
+					</dd>
+
+					<dt>Sound</dt>
+					<dd>
+						.<br />
+						Используемые переменные: <code></code>.
+					</dd>
+
+					<dt>loopSound</dt>
+					<dd>
+						.<br />
+						Используемые переменные: <code></code>.
+					</dd>
+
+					<dt>soundList</dt>
+					<dd>
+						.<br />
+						Используемые переменные: <code></code>.
+					</dd>
+
+					<dt>Vibrate</dt>
+					<dd>
+						.<br />
+						Используемые переменные: <code></code>.
+					</dd>
 				</dl>
 			</section>
 
