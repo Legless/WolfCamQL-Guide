@@ -1,29 +1,14 @@
-$( document ).ready( function( ) {
-		CreateTOC( );
-	}
-);
+$(function () {
 
-// Создаёт содержание
-function CreateTOC( ){
-	var html = '';
-	var last = '2';
-	html = '<ol>';
-
-	$( 'h2, h3' ).each( function( ) {
-		var tag = $( this ).get(0).tagName[ 1 ];
-
-		if( tag !== last ) { // уровень заголовка сменился
-			if( tag > last ) {
-				html += '<ol>';
-			} else {
-				html += '</ol>';
-			}
+	// smooth scroll to id
+	var href, top, scrollSpeed = 1000
+	$('body').on('click', '.scroll-link', function () {
+		href = $(this).attr('href');
+		if ($(href).length) {
+			top = $(href).offset().top;
+			$('html, body').stop().animate({'scrollTop': top}, scrollSpeed);
 		}
-		html += '<li><a href="#">' + $( this ).html( ) + '</a></li>';
-
-		last = tag;
-	} );
-
-	html += '</ol>';
-	$( '#toc' ).html( html );
-}
+		return false;
+	});
+	
+});
