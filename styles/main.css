@@ -11,7 +11,7 @@ nav, section {
 	padding: 20px 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	margin: 0 0 15px;
 	border-bottom: 1px solid #333;
 	color: #fed;
@@ -25,6 +25,10 @@ h2 {
 
 h3 {
 	font-size: 1.2em;
+}
+
+h4 {
+	font-size: 1.0em;
 }
 
 #wrapper {
@@ -135,11 +139,12 @@ tr {
 }
 
 tr:hover {
-	background-color: rgba(255, 255, 255, 0.02);
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
 th, td {
 	padding: 15px 20px;
+	background-color: rgba(0, 0, 0, 0.15);
 }
 
 th {
