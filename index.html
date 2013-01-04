@@ -557,38 +557,188 @@
 						<dt>if (math) { ... }</dt>
 						<dd>Выполняет блок кода только если условие <code>math</code> истинно (не равно нолю).</dd>
 
+						<dt>once { ... }</dt>
+						<dd>Выполняет блок кода только едножды, не зависимо от того, сколько раз был вызван данный кусок кода.</dd>
+
 						<dt>distance (math) { ... }</dt>
 						<dd>Выполняет блок кода через каждые <code>math</code> юнитов расстояния. Не имеет смысла в событийных скриптах (таких, как <code>weapon/impact</code>) и должен использоваться только в событиях типа <code>weapon/trail</code>.</dd>
 
 						<dt>interval (math) { ... }</dt>
 						<dd>Выполняет блок кода каждые <code>math</code> секунд. Как и предыдущий блок, не имеет смысла в событийных скриптах.</dd>
+
+						<dt>shaderList (math) { ... }, modelList (math) { ... }, soundList (math) { ... }, colorList (math) { ... }</dt>
+						<dd>Блок содержит список шейдеров, моделей, звуков или цветов соответственно, элемент списка c номером <code>math</code> назначается соответствующей переменной.</dd>
+
+						<dt>colorBlend (math) { ... }</dt>
+						<dd>То же, что и <code>colorList</code>, но выбирается не ближайший к номеру <code>math</code> цвет, а цвета интерполируются.</dd>
 					</dl>
 
 				<h3>Переменные</h3>
-					<p>Переменные создают контекст для скриптовых комманд. Бывают трёх типов: числовые, векторные и строковые.</p>
+					<p>
+						Переменные создают контекст для скриптовых комманд. Бывают трёх типов: вещественные, векторные и строковые.
+						Кроме переменных fx-подсистемы есть доступ ко всем переменным вульфкама по их имени.
+					</p>
 				
-				<h4>Числовые</h4>				
-					<ul>
-						<li>colorFade </li>
-						<li>colorScale </li>
-						<li>colorHue </li>
-						<li>alphaFade </li>
-						<li>red </li>
-						<li>green </li>
-						<li>blue </li>
-						<li>alpha </li>
-						<li>size</li>
-					</ul>
+				<h4>Вещественные</h4>				
+					<dl>
+						<dt>colorFade</dt>
+						<dd>Задаёт точку, начиная с которой цвет сущности начинает стремиться к [0;0;0].</dd>
 
-				<h4>Векторы</h4>				
-					<ul>
+						<dt>alphaFade</dt>
+						<dd>То же самое для прозрачности.</dd>
+
+						<dt>colorScale</dt>
+						<dt>colorHue</dt>
+						<dd>...</dd>
 						
-					</ul>
+						<dt>red, green, blue, alpha</dt>
+						<dd>Компоненты цвета сущности.</dd>
+
+						<dt>size</dt>
+						<dd>Размер сущности</dd>
+
+						<dt>width</dt>
+						<dd>Ширина сущности</dd>
+
+						<dt>t0 ... t9</dt>
+						<dd>Временные переменные для сохранения промежуточных значений. Не влияют ни на что.</dd>
+					</dl>
+
+				<h4>Векторные</h4>				
+					<dl>
+						<dt>origin</dt>
+						<dd>Положение сущности в пространстве.</dd>
+
+						<dt>velocity</dt>
+						<dd>Линейная скорость сущности: значение этого вектора каждый кадр прибавляется к <code>origin</code>.</dd>
+
+						<dt>angles</dt>
+						<dd>Углы поворота сущности относительно [0;0;0].</dd>
+
+						<dt>dir</dt>
+						<dd>Направление сущности. </dd>
+
+						<dt>parentOrigin</dt>
+						<dt>parentVelocity</dt>
+						<dt>parentAngles</dt>
+						<dt>parentDir</dt>
+						<dd>...</dd>
+
+						<dt>color</dt>
+						<dd>Цвет вершн сущности.</dd>
+
+						<dt>v0 ... v9</dt>
+						<dd>Временные переменные для сохранения промежуточных значений. Не влияют ни на что.</dd>
+					</dl>
+					
 
 				<h4>Строковые</h4>				
-					<ul>
-						
-					</ul>
+					<dl>
+						<dt>shader</dt>
+						<dd>Шейдер, накладываемый на сущность.</dd>
+
+						<dt>model</dt>
+						<dd>Модель для отрисовки.</dd>
+
+						<dt>script</dt>
+						<dd>...</dd>
+					</dl>
+
+				<h4>Специальные ключевые слова</h4>
+					<dl>moveGravity floatGravity</dl>
+					<dd>Наделяет сущность равитацией.</dd>
+
+					<dl>moveBounce floatGravity floatFactor </dl>
+					<dd>То же, что и предыдущее, но сущность отскакивает от поверхностей, сохраняя <code>floatFactor</code> первоначальной скорости.</dd>
+
+					<dl>impactDeath floatGravity</dl>
+					<dd>То же, что и предыдущее, но сущность исчезает при столкновении с поверхностью.</dd>
+
+					<dl>sink floatDelay floatDepth</dl>
+					<dd>Сущность "впадает" в поверхности на глубину <code>floatDepth</code> с задержкой <code>floatDelay</code>.</dd>
+
+					<dl>shaderClear</dl>
+					<dd>Очищает шейдер.</dd>
+
+					<dl>push, pop, pushparent</dl>
+					<dd>...</dd>
+
+
+				<h3>Математика</h3>
+				<h4>Вещественная математика</h4>
+				<p>
+					Выражение, дающие на выходе вещественное число, может содержать любые консольные переменные, вещественные переменные fx-системы, арифметические операторы (+, -, *, /), операторы сравнения (=, !, &lt;, &gt;) и операторы булевой алгебры (&amp;, |). Доступны следующие алгебраические функции:
+				</p>
+
+				<dl>
+					<dt>sqrt( x )</dt>
+					<dd>Возвращает квадратный корень из <code>x</code>.</dd>
+
+					<dt>ceil( x ), floor( x )</dt>
+					<dd>Округление <code>x</code> до близжайшего целого вверх и вниз соответственно</dd>
+
+					<dt>sin( x ), cos( x )</dt>
+					<dd>Синус и косинус</dd>
+
+					<dt>clip( x )</dt>
+					<dd>Приводит число <code>x</code> к отрезку [0;1] так, что значения меньше ноля становятся нолём, а больше единицы &mdash; единицей.</dd>
+
+					<dt>rand, crand</dt>
+					<dd>Возвращают случайное число от -1 до 1 и от 0 до 1 соответственно.</dd>
+				</dl>
+
+				<h4>Математика с векторами</h4>
+				<p>
+					Вектор представляет собой трёхмерный массив вещественных чисел.	Для доступа к отдельным его компонентам после имени вектора нужно поставить номер координаты, например
+					<code>origin0</code> возвращает абсциссу. При использовании вектора в качестве вещественного числа будет возвращаться его длина, например:
+					<code class="box">
+						size dir // Размер становится равным длинне вектора dir
+					</code>
+				</p>
+				<p>
+					Как и для вещественных чисел, для векторов доступны некоторые функции: 
+				</p>
+
+				<dl>
+					<dt>copy vSrc vDst</dt>
+					<dd>Копирует <code>vSrc</code> в <code>vDst</code>.</dd>
+
+					<dt>scale vSrc vDst floatX</dt>
+					<dd><code>vDst = vSrc * floatX</code></dd>
+
+					<dt>sub vSrc1 vSrcs vDst</dt>
+					<dd><code>vDst = vSrc1 - vSrc2</code></dd>
+
+					<dt>add vSrc1 vSrc1 vDst</dt>
+					<dd><code>vDst = vSrc1 + vSrc2</code></dd>
+
+					<dt>addScale vSrc1 vSrc2 vDst floatX</dt>
+					<dd><code>vDst = vSrc1 + vSrc2 * floatX</code></dd>
+
+					<dt>subScale vSrc1 vSrc2 vDst floatX</dt>
+					<dd><code>vDst = vSrc1 - floatX* vSrc2</code></dd>
+
+					<dt>rotateAround vSrc vDir vDst floatX</dt>
+					<dd>Вращает точку <code>vSrc</code> на <code>floatX</code> градусов вокруг <code>vDir</code> и сохраняет её новую позицию в <code>vDst</code>.</dd>
+
+					<dt>wobble vSrc vDst floatX</dt>
+					<dd>Перемещает точку <code>vSrc</code> по поверхности конуса с углом <code>floatX</code>.</dd>
+
+					<dt>inverse vSrc [vDst]</dt>
+					<dd>vDst = vSrc * -1. Если параметр <code>vDst</code> не задан, то результат сохранятся в <code>vSrc</code>.</dd>	
+
+					<dt>normalize vSrc [vDst]</dt>
+					<dd>Нормализирует вектор <code>vSrc</code>.</dd>
+
+					<dt>perpendicular vSrc [vDst]</dt>
+					<dd>Находит вектор, перпендикулярный <code>vSrc</code>.</dd>
+
+					<dt>clear vSrc</dt>
+					<dd><code>vSrc = (0, 0, 0)</code></dd>
+
+					<dt>random vDst</dt>
+					<dd>Записывает случайные значения из диапазона [0;1] в компоненты вектора.</dd>
+				</dl>    
 			</section>
 
 			<section id="small-wiles">
