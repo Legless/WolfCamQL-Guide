@@ -112,13 +112,16 @@
 					<b>3</b> &mdash; растягивает худ согласно новых пропорций окна. Наиболее предпочтительная команда. <br/>
 					<b>4</b> &mdash; пытается перестроить худ для новых пропорций. <br/>
 				</p>
-				<div class="clearfix img-box">
-					<a href="images/screenshots/widescreen4.jpg" target="_blank"><img src="images/thumbs/widescreen4.jpg" width="300" height="169" alt="" /></a>
-					<a href="images/screenshots/widescreen2.jpg" target="_blank"><img src="images/thumbs/widescreen2.jpg" width="300" height="169" alt="" /></a>
-					<br />
-					<a href="images/screenshots/widescreen3.jpg" target="_blank"><img src="images/thumbs/widescreen3.jpg" width="300" height="169" alt="" /></a>
-					<a href="images/screenshots/widescreen1.jpg" target="_blank"><img src="images/thumbs/widescreen1.jpg" width="300" height="169" alt="" /></a>
+
+				<div class="img-box">
+					<a href="images/screenshots/widescreen1.jpg" target="_blank"><img src="images/thumbs/widescreen1.jpg" /></a>
+					<a href="images/screenshots/widescreen2.jpg" target="_blank"><img src="images/thumbs/widescreen2.jpg" /></a>
+					<a href="images/screenshots/widescreen3.jpg" target="_blank"><img src="images/thumbs/widescreen3.jpg" /></a>
+					<a href="images/screenshots/widescreen4.jpg" target="_blank"><img src="images/thumbs/widescreen4.jpg" /></a>
+
+					<div class="clearfix"></div>
 				</div>
+
 			</section>
 
 			<section id="viewing-demos">
@@ -313,7 +316,29 @@
 				</p>
 
 				<h3>Встроенный motion blur</h3>
-				<p>...</p>
+				<div class="img-wrapper">
+					<a href="images/screenshots/mblur.jpg" target="_blank"><img src="images/thumbs/mblur.jpg" width="400" height="225" alt="" /></a>
+					<a href="images/screenshots/mblur2.jpg" target="_blank"><img src="images/thumbs/mblur2.jpg" width="400" height="225" alt="" /></a>
+				</div>
+					
+				<p>
+					<b>Motion blur</b> &mdash; это размытие объекта при его движении. В вульфкаме за этот эффект отвечают следующие переменные:
+
+					<dl>
+						<dt>mme_blurframes [0-32]</dt>
+						<dd>Определяет количество промежуточных кадров, склеиваемых в блюр. Чем больше значение, тем медленнее идёт запись, но тем более плавный будет результат. например, <code>/mmae_blurframes 12</code> означает, что для каждого кадра видео Wolfcam будет делать 12 промежуточных и склеивать их в один.</dd>
+
+						<dt>mme_bluroverlap [0-32]</dt>
+						<dd>Определяет количество кадров, которые сохраняются для каждого нового.</dd>
+
+						<dt>mme_blurtype [gaussian | triangle | median]</dt>
+						<dd>Определяет алгоритм сглаживания:  <br />
+							<b>triangle</b> &mdash; треугольное (линейное) сглаживание, экстримальные значения пикселей очень сильно влияют на финальный результат. <br />
+							<b>gaussian</b> &mdash; сглаживание Гаусса, экстримальные значения пикселей слабо влияют на финальный результат. <br />
+							<b>median</b> &mdash; сглаживание по медиане, экстремальные зачения игнорируются. <br />
+						</dd>
+					</dl>
+				</p>
 
 				<h3>Bloom и цветокоррекция</h3>
 				<div class="img-wrapper">
@@ -562,9 +587,6 @@
 						<dt>if (math) { ... }</dt>
 						<dd>Выполняет блок кода только если условие <code>math</code> истинно (не равно нолю).</dd>
 
-						<dt>once { ... }</dt>
-						<dd>Выполняет блок кода только едножды, не зависимо от того, сколько раз был вызван данный кусок кода.</dd>
-
 						<dt>distance (math) { ... }</dt>
 						<dd>Выполняет блок кода через каждые <code>math</code> юнитов расстояния. Не имеет смысла в событийных скриптах (таких, как <code>weapon/impact</code>) и должен использоваться только в событиях типа <code>weapon/trail</code>.</dd>
 
@@ -592,9 +614,11 @@
 						<dt>alphaFade</dt>
 						<dd>То же самое для прозрачности.</dd>
 
-						<dt>colorScale</dt>
-						<dt>colorHue</dt>
-						<dd>...</dd>
+						<!--
+							<dt>colorScale</dt>
+							<dt>colorHue</dt>
+							<dd>...</dd>
+						-->
 						
 						<dt>red, green, blue, alpha</dt>
 						<dd>Компоненты цвета сущности.</dd>
@@ -621,13 +645,15 @@
 						<dd>Углы поворота сущности относительно [0;0;0].</dd>
 
 						<dt>dir</dt>
-						<dd>Направление сущности. </dd>
+						<dd>Вектор направления сущности. </dd>
 
-						<dt>parentOrigin</dt>
-						<dt>parentVelocity</dt>
-						<dt>parentAngles</dt>
-						<dt>parentDir</dt>
-						<dd>...</dd>
+						<!--
+							<dt>parentOrigin</dt>
+							<dt>parentVelocity</dt>
+							<dt>parentAngles</dt>
+							<dt>parentDir</dt>
+							<dd>...</dd>
+						-->
 
 						<dt>color</dt>
 						<dd>Цвет вершн сущности.</dd>
@@ -644,29 +670,30 @@
 
 						<dt>model</dt>
 						<dd>Модель для отрисовки.</dd>
-
-						<dt>script</dt>
-						<dd>...</dd>
 					</dl>
 
 				<h4>Специальные ключевые слова</h4>
-					<dl>moveGravity floatGravity</dl>
-					<dd>Наделяет сущность гравитацией.</dd>
+					<dl>
+						<dt>moveGravity floatGravity</dt>
+						<dd>Наделяет сущность гравитацией.</dd>
 
-					<dl>moveBounce floatGravity floatFactor </dl>
-					<dd>То же, что и предыдущее, но сущность отскакивает от поверхностей, сохраняя <code>floatFactor</code> первоначальной скорости.</dd>
+						<dt>moveBounce floatGravity floatFactor </dt>
+						<dd>То же, что и предыдущее, но сущность отскакивает от поверхностей, сохраняя <code>floatFactor</code> первоначальной скорости.</dd>
 
-					<dl>impactDeath floatGravity</dl>
-					<dd>То же, что и предыдущее, но сущность исчезает при столкновении с поверхностью.</dd>
+						<dt>impactDeath floatGravity</dt>
+						<dd>То же, что и предыдущее, но сущность исчезает при столкновении с поверхностью.</dd>
 
-					<dl>sink floatDelay floatDepth</dl>
-					<dd>Сущность "впадает" в поверхности на глубину <code>floatDepth</code> с задержкой <code>floatDelay</code>.</dd>
+						<dt>sink floatDelay floatDepth</dt>
+						<dd>Сущность "впадает" в поверхности на глубину <code>floatDepth</code> с задержкой <code>floatDelay</code>.</dd>
 
-					<dl>shaderClear</dl>
-					<dd>Очищает шейдер.</dd>
+						<dt>shaderClear</dt>
+						<dd>Очищает шейдер.</dd>
 
-					<dl>push, pop, pushparent</dl>
-					<dd>...</dd>
+						<!--
+							<dt>push, pop, pushparent</dt>
+							<dd>...</dd>
+						-->
+					</dl>
 
 
 				<h3>Математика</h3>
@@ -747,7 +774,12 @@
 			</section>
 
 			<section id="small-wiles">
-				<h2>Небольшие хитрости</h2>
+				<h2>Маленькие хитрости</h2>
+				<h3>Ускорение работы</h3>
+					<p>
+						Wolfcam и не использует на все 100% ресурсы процессора и жесткого диска, что критично для рендера большого количество демо-файлов. Для исправления этого достаточно запустить несколько его копий, рендеря в каждой свой демо-файл или его часть.
+					</p>
+
 				<p>...</p>
 			</section>
 

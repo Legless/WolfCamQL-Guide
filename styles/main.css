@@ -91,6 +91,9 @@ img {
 	-moz-transition: all 0.1s;
 	-o-transition: all 0.1s;
 	transition: all 0.1s;
+
+	float: right;
+	margin: 5px;
 }
 
 .img-wrapper img:hover {
@@ -100,6 +103,8 @@ img {
 }
 
 .img-box {
+	width: 700px;
+	margin: auto;
 	text-align: center;
 }
 
@@ -107,6 +112,7 @@ img {
 	-webkit-box-shadow: 0 0 10px #000;
 	-moz-box-shadow: 0 0 10px #000;
 	box-shadow: 0 0 10px #000;
+	margin: 5px;
 }
 
 p {
