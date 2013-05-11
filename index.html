@@ -369,6 +369,39 @@
 						<b>/r_bloomDebug</b> &mdash; отладка: отрисовка блума в отдельном "окне", не накладывая его на сцену <br />
 					</code>
 				</p>
+
+				<h3>/clientoverride</h3>
+				<p>
+					<code>/clientoverride</code> &mdash; это специальная комманда, которая позволяет изменять модель, скин, цвета и прочие параметры каждого записанного в демо игрока. Она имеет следующий синтаксис: 
+					<code class="box">
+						/clientoverride id param value
+					</code>
+				</p>
+				<p>
+					Где: <code>id</code> &mdash; это номер игрока, полученный командой <code>/players</code>,
+					<code>param value</code> &mdash; это изменяемый параметр и его новое значение. 
+				</p>
+				<p>
+					<table>
+						<tr><th colspan="2">Параметры, доступные для перезаписи: </th></tr>
+						<tr><th>Параметр</th>
+							<th>Описание</th></tr>
+						<tr><th>model</th>
+							<td>Модель игрока</td></tr>
+						<tr><th>hmodel</th>
+							<td>Модель головы игрока</td></tr>
+						<tr><th>n</th>
+							<td>Имя</td></tr>
+						<tr><th>t</th>
+							<td>Команда игрока. (0 &mdash; free, 1 &mdash; red, 2 &mdash; blue, 3 &mdash; spec)</td></tr>
+						<tr><th>headskin, torsoskin, legsskin</th>
+							<td>Скин головы, торса и ног</td></tr>
+						<tr><th>headcolor, torsocolor, legscolor</th>
+							<td>Цвет головы, торса и ног (для bright-скинов)</td></tr>
+						<tr><th>c1, c2</th>
+							<td>Цвета рейла</td></tr>
+					</table>
+				</p>
 			</section>
 
 			<section id="editing-demos">
