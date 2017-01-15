@@ -818,306 +818,325 @@
 				</p>
 
 				<h3>Пример скрипта</h3>
-					<p>
-						Пример скрипта, вызываемого когда игрок чатится:
-						<code class="box">
-							player/talk {<br />
-							size		10<br />
-							shader		sprites/balloon3<br />
-							Sprite<br />
-							}
-						</code>
+				<p>
+					Пример скрипта, вызываемого когда игрок чатится:
+					<code class="box">
+						player/talk {<br />
+						size		10<br />
+						shader		sprites/balloon3<br />
+						Sprite<br />
+						}
+					</code>
 
-						Во-первых, <code>player/talk</code> &mdash; это название скрипта, которое говорит игре, к какому событию его привязывать. Все названия перечислены ниже. Далее в фигурных скобках идет тело скрипта. Код присваивает значение переменным, означающим размер и шейдер сущности, и вызывает команду <code>sprite</code>, рисующую в сцене картинку, повёрнутую к камере (спрайт), используя переменные <code>size</code> (размер), <code>shader</code> (шейдер) и <code>origin</code> (положение в пространстве). Хоть переменная <code>origin</code> и не задана в теле скрипта, она передаётся в него движком Вульфкама.
-					</p>
+					Во-первых, <code>player/talk</code> &mdash; это название скрипта, которое говорит игре, к какому событию его привязывать. Все названия перечислены ниже. Далее в фигурных скобках идет тело скрипта. Код присваивает значение переменным, означающим размер и шейдер сущности, и вызывает команду <code>sprite</code>, рисующую в сцене картинку, повёрнутую к камере (спрайт), используя переменные <code>size</code> (размер), <code>shader</code> (шейдер) и <code>origin</code> (положение в пространстве). Хоть переменная <code>origin</code> и не задана в теле скрипта, она передаётся в него движком Вульфкама.
+				</p>
 
 				<h3>Названия скриптов</h3>
-					<p>
-						Каждое событие, которое обрабатывается fx-подсистемой, привязано к определённому названий скрипта. Ниже находится список этих названий, описание события, вызывающего их и список аргументом, передаваемых в скрипт. 
-					</p>
+				<p>
+					Каждое событие, которое обрабатывается fx-подсистемой, привязано к определённому названий скрипта. Ниже находится список этих названий, описание события, вызывающего их и список аргументом, передаваемых в скрипт. 
+				</p>
 
-					<table>
-						<tr><th colspan="3">События для оружия</th></tr>
-						<tr><th>Название</th>
-							<th>Событие</th>
-							<th>Аргументы</th></tr>
-						<tr><th>weapon/X/flash</th>
-							<td>Вызывается каждый фрейм в течение 25 мс. после выстрела оружия</td>
-							<td>origin, velocity, axis, life</td></tr>
-						<tr><th>weapon/X/fire</th>
-							<td>Вызывается один раз при выстреле из оружия</td>
-							<td>origin, direction, velocity</td></tr>
-						<tr><th>weapon/X/impact</th>
-							<td>Пуля достигла стены или взорвался снаряд</td>
-							<td>origin, direction</td></tr>
-						<tr><th>weapon/X/impactflesh</th>
-							<td>Пуля или снаряд попали в игрока</td>
-							<td>origin, direction</td></tr>
-						<tr><th>weapon/X/projectile</th>
-							<td>Вызывается каждый фрейм для снарядов</td>
-							<td>origin, velocity, direction, angles</td></tr>
-						<tr><th>weapon/X/trail</th>
-							<td>Вызывается каждый фрейм для снарядов или единожды для hitscan-оружия</td>
-							<td>origin, velocity, axis, life</td></tr>
-						<tr><th>weapon/X/bubbles</th>
-							<td>Вызывается при выстреле из оружия под водой</td>
-							<td>origin</td></tr>
-						<tr><th>common/jumpPad</th>
-							<td>Игрок коснулся джамппада</td>
-							<td>origin</td></tr>
-						<tr><th>common/headShot</th>
-							<td>В игрока попали headshot</td>
-							<td>origin</td></tr>							
-					</table>
+				<table>
+					<tr><th colspan="3">События для оружия</th></tr>
+					<tr><th>Название</th>
+						<th>Событие</th>
+						<th>Аргументы</th></tr>
+					<tr><th>weapon/X/flash</th>
+						<td>Вызывается каждый фрейм в течение 25 мс. после выстрела оружия</td>
+						<td>origin, velocity, axis, life</td></tr>
+					<tr><th>weapon/X/fire</th>
+						<td>Вызывается один раз при выстреле из оружия</td>
+						<td>origin, direction, velocity</td></tr>
+					<tr><th>weapon/X/impact</th>
+						<td>Пуля достигла стены или взорвался снаряд</td>
+						<td>origin, direction</td></tr>
+					<tr><th>weapon/X/impactflesh</th>
+						<td>Пуля или снаряд попали в игрока</td>
+						<td>origin, direction</td></tr>
+					<tr><th>weapon/X/projectile</th>
+						<td>Вызывается каждый фрейм для снарядов</td>
+						<td>origin, velocity, direction, angles</td></tr>
+					<tr><th>weapon/X/trail</th>
+						<td>Вызывается каждый фрейм для снарядов или единожды для hitscan-оружия</td>
+						<td>origin, velocity, axis, life</td></tr>
+					<tr><th>weapon/X/bubbles</th>
+						<td>Вызывается при выстреле из оружия под водой</td>
+						<td>origin</td></tr>
+					<tr><th>common/jumpPad</th>
+						<td>Игрок коснулся джамппада</td>
+						<td>origin</td></tr>
+					<tr><th>common/headShot</th>
+						<td>В игрока попали headshot</td>
+						<td>origin</td></tr>							
+				</table>
 
-					<p>
-						На месте <b>x</b> в этих скриптах может находится любое из следующих оружий: 
-						<code>common (для всех оружий), rocket, rail, grenade, machinegun, shotgun, plasma, bfg, gauntlet, lightning, grapple.</code>
-					</p>
+				<p>
+					На месте <b>x</b> в этих скриптах может находится любое из следующих оружий: 
+					<code>common (для всех оружий), rocket, rail, grenade, machinegun, shotgun, plasma, bfg, gauntlet, lightning, grapple.</code>
+				</p>
 
 
-					<table>
-						<tr><th colspan="3">Другие события</th></tr>
-						<tr><th>Название</th>
-							<th>Событие</th>
-							<th>Аргументы</th></tr>
-						<tr><th>player/gibbed</th>
-							<td>Игрок убит, и его труп должен взорваться</td>
-							<td>origin, velocity</td></tr>
-						<tr><th>player/thawed</th>
-							<td>Игрока разморозили в режиме Freeze Tag</td>
-							<td>origin, velocity</td></tr>
-						<tr><th>player/teleportIn</th>
-							<td>Игрок входит в телепорт</td>
-							<td>origin</td></tr>
-						<tr><th>player/teleportOut</th>
-							<td>Выходит из телепорта</td>
-							<td>origin</td></tr>
-						<tr><th>player/haste, <br />
-								player/flight</th>
-							<td>У игрока активнен соответствующий Power-Up</td>
-							<td>origin</td></tr>
-						<tr><th>player/talk</th>
-							<td>Игрок открыл чат</td>
-							<td>origin</td></tr>
-						<tr><th>player/connection</th>
-							<td>Игрок завис</td>
-							<td>origin</td></tr>
-						<tr><th>player/impressive, <br /> 
-								player/excellent, <br /> 
-								player/gauntlet, <br /> 
-								player/capture, <br /> 
-								player/assist</th>
-							<td>Игрок получил соответствующую медаль</td>
-							<td>origin</td></tr>
-						<tr><th>player/head/trail, <br /> 
-								player/torso/trail, <br /> 
-								player/legs/trail</th>
-							<td>Выполняется каждый фрейм для соответствующей части тела каждого игрока</td>
-							<td>origin</td></tr>
-					</table>
+				<table>
+					<tr><th colspan="3">Другие события</th></tr>
+					<tr><th>Название</th>
+						<th>Событие</th>
+						<th>Аргументы</th></tr>
+					<tr><th>player/gibbed</th>
+						<td>Игрок убит, и его труп должен взорваться</td>
+						<td>origin, velocity</td></tr>
+					<tr><th>player/thawed</th>
+						<td>Игрока разморозили в режиме Freeze Tag</td>
+						<td>origin, velocity</td></tr>
+					<tr><th>player/teleportIn</th>
+						<td>Игрок входит в телепорт</td>
+						<td>origin</td></tr>
+					<tr><th>player/teleportOut</th>
+						<td>Выходит из телепорта</td>
+						<td>origin</td></tr>
+					<tr><th>player/haste, <br />
+							player/flight</th>
+						<td>У игрока активнен соответствующий Power-Up</td>
+						<td>origin</td></tr>
+					<tr><th>player/talk</th>
+						<td>Игрок открыл чат</td>
+						<td>origin</td></tr>
+					<tr><th>player/connection</th>
+						<td>Игрок завис</td>
+						<td>origin</td></tr>
+					<tr><th>player/impressive, <br /> 
+							player/excellent, <br /> 
+							player/gauntlet, <br /> 
+							player/capture, <br /> 
+							player/assist</th>
+						<td>Игрок получил соответствующую медаль</td>
+						<td>origin</td></tr>
+					<tr><th>player/head/trail, <br /> 
+							player/torso/trail, <br /> 
+							player/legs/trail</th>
+						<td>Выполняется каждый фрейм для соответствующей части тела каждого игрока</td>
+						<td>origin</td></tr>
+				</table>
+				<p>
+					Wolfcam также поддерживает скрипты, вызываемые из консоли с помощью команды <code>/runfx название_скрипта</code>. Например:
+					<code class="box">
+						changeFov { <br />
+							t0  cg_fov <br />
+							emitterf 10 { <br />
+								if lerp >= 1.0 { <br />
+									command cg_fov %t0 <br />
+									return  // all done <br />
+								} <br />
+								//echo lerp <br />
+								t1 t0 * lerp <br />
+								command cg_fov %t1 <br />
+							} <br />
+						}
+					</code>
+
+					<code class="box">/runfx changeFov</code>
+				</p>
 
 				<h3>Команды</h3>
-					<p>
-						Команды фактически добавляют в сцену эффекты, такие как звук, модели, спрайты и т.д. Остальные строки скрипта всего-лишь настраивают параметры команд.
-					</p>
-					<dl>
-						<dt>Sprite</dt>
-						<dd>
-							Добавляет в сцену квадратный полигон, всегда повёрнутый к камере. <br />
-							Аргументы: <code>renderfx</code>. <br />
-							Используемые переменные: <code>origin, shader, size, angle, color</code>.
-						</dd>
+				<p>
+					Команды фактически добавляют в сцену эффекты, такие как звук, модели, спрайты и т.д. Остальные строки скрипта всего-лишь настраивают параметры команд.
+				</p>
+				<dl>
+					<dt>Sprite</dt>
+					<dd>
+						Добавляет в сцену квадратный полигон, всегда повёрнутый к камере. <br />
+						Аргументы: <code>renderfx</code>. <br />
+						Используемые переменные: <code>origin, shader, size, angle, color</code>.
+					</dd>
 
-						<dt>Quad</dt>
-						<dd>
-							Добавляет в сцену полигон, нормаль которого направлена по вектору <code>dir</code>. <br />
-							Аргументы: <code>renderfx</code>. <br />
-							Используемые переменные: <code>origin, shader, size, angle, color</code>.
-						</dd>
+					<dt>Quad</dt>
+					<dd>
+						Добавляет в сцену полигон, нормаль которого направлена по вектору <code>dir</code>. <br />
+						Аргументы: <code>renderfx</code>. <br />
+						Используемые переменные: <code>origin, shader, size, angle, color</code>.
+					</dd>
 
-						<dt>Beam</dt>
-						<dd>
-							Используется для эффектов рейлгана и шафта. Шейдер растянут между <code>origin</code> и <code>origin+dir</code>. Толщина луча установлена в <code>size</code>. Луч всегда повёрнут к камере. <br />
-							Используемые переменные: <code>origin, dir, shader, size, angle, color</code>.
-						</dd>
+					<dt>Beam</dt>
+					<dd>
+						Используется для эффектов рейлгана и шафта. Шейдер растянут между <code>origin</code> и <code>origin+dir</code>. Толщина луча установлена в <code>size</code>. Луч всегда повёрнут к камере. <br />
+						Используемые переменные: <code>origin, dir, shader, size, angle, color</code>.
+					</dd>
 
-						<dt>Spark</dt>
-						<dd>
-							Добавляет "искорку" — прямоугольный полигон, повёрнутый к камере. Его длинна выставляется переменной <code>size</code>, ширина &mdash; <code>width</code>. Один из концов направлен по вектору <code>velocity</code>.<br />
-							Используемые переменные: <code>origin, velocity, size, width, shader, color</code>.
-						</dd>
+					<dt>Spark</dt>
+					<dd>
+						Добавляет "искорку" — прямоугольный полигон, повёрнутый к камере. Его длинна выставляется переменной <code>size</code>, ширина &mdash; <code>width</code>. Один из концов направлен по вектору <code>velocity</code>.<br />
+						Используемые переменные: <code>origin, velocity, size, width, shader, color</code>.
+					</dd>
 
-						<dt>Decal</dt>
-						<dd>
-							Декали используютя для помещения шейдера на поверхности карты. Шейдер остаётся на поверхности в течение <code>life</code> милисекунд. Деколь центрирована по вектору <code>origin</code>, её нормаль направлена по <code>dir</code>.<br />
-							Аргументы: <code>life</code> &mdash; время жизни деколи в милисекундах. <br />
-							Используемые переменные: <code>origin, shader, dir, color, rotate, size</code>.
-						</dd>
+					<dt>Decal</dt>
+					<dd>
+						Декали используютя для помещения шейдера на поверхности карты. Шейдер остаётся на поверхности в течение <code>life</code> милисекунд. Деколь центрирована по вектору <code>origin</code>, её нормаль направлена по <code>dir</code>.<br />
+						Аргументы: <code>life</code> &mdash; время жизни деколи в милисекундах. <br />
+						Используемые переменные: <code>origin, shader, dir, color, rotate, size</code>.
+					</dd>
 
-						<dt>dirModel</dt>
-						<dd>
-							Добавляет в сцену модель, заданную в переменной <code>model</code>, направленную по вектору <code>dir</code>.<br />
-							Используемые переменные: <code>origin, dir, model, shader, rotate, size, color</code>.
-						</dd>
+					<dt>dirModel</dt>
+					<dd>
+						Добавляет в сцену модель, заданную в переменной <code>model</code>, направленную по вектору <code>dir</code>.<br />
+						Используемые переменные: <code>origin, dir, model, shader, rotate, size, color</code>.
+					</dd>
 
-						<dt>Light</dt>
-						<dd>
-							Добавляет в сцену свет в позиции <code>origin</code>.<br />
-							Используемые переменные: <code>origin, size, color </code>.
-						</dd>
+					<dt>Light</dt>
+					<dd>
+						Добавляет в сцену свет в позиции <code>origin</code>.<br />
+						Используемые переменные: <code>origin, size, color </code>.
+					</dd>
 
-						<dt>Sound</dt>
-						<dd>
-							Проигрывает звук <code>soundname</code>.<br />
-							Аргументы: <code>soundname</code>.<br />
-							Используемые переменные: <code>origin</code>
-						</dd>
+					<dt>Sound</dt>
+					<dd>
+						Проигрывает звук <code>soundname</code>.<br />
+						Аргументы: <code>soundname</code>.<br />
+						Используемые переменные: <code>origin</code>
+					</dd>
 
-						<dt>loopSound</dt>
-						<dd>
-							Проигрывает звук <code>soundname</code> в бесконечном цикле.<br />
-							Аргументы: <code>soundname</code>.<br />
-							Используемые переменные: <code>origin</code>
-						</dd>
+					<dt>loopSound</dt>
+					<dd>
+						Проигрывает звук <code>soundname</code> в бесконечном цикле.<br />
+						Аргументы: <code>soundname</code>.<br />
+						Используемые переменные: <code>origin</code>
+					</dd>
 
-						<dt>Vibrate</dt>
-						<dd>
-							Создаёт вибрацию камеры с силой <code>strength</code> в точке <code>origin</code>.<br />
-							Аргументы: <code>strength</code>.<br />
-							Используемые переменные: <code>origin</code>.
-						</dd>
+					<dt>Vibrate</dt>
+					<dd>
+						Создаёт вибрацию камеры с силой <code>strength</code> в точке <code>origin</code>.<br />
+						Аргументы: <code>strength</code>.<br />
+						Используемые переменные: <code>origin</code>.
+					</dd>
 
-						<dt>Command cmd</dt>
-						<dd>
-							Запускает комманду консоли.<br />
-							Аргументы: <code>cmd</code> — команда, которую нужно вызвать.<br />
-							Например, 
-							<code class="box">
-								command clientoverride us model keel
-							</code>
-						</dd>
-					</dl>
+					<dt>Command cmd</dt>
+					<dd>
+						Запускает комманду консоли.<br />
+						Аргументы: <code>cmd</code> — команда, которую нужно вызвать.<br />
+						Например, 
+						<code class="box">
+							command clientoverride us model keel
+						</code>
+					</dd>
+				</dl>
 
 
 				<h3>Блоки</h3>
-					<dl>
-						<dt>repeat (math) { ... }</dt>
-						<dd>Выполняет блок кода <code>math</code> раз, в теченее которых переменная <code>loop</code> изменяется от 0 до 1.</dd>
+				<dl>
+					<dt>repeat (math) { ... }</dt>
+					<dd>Выполняет блок кода <code>math</code> раз, в теченее которых переменная <code>loop</code> изменяется от 0 до 1.</dd>
 
-						<dt>emitter (math) { ... }</dt>
-						<dd>Любая сущность, созданная в этом блоке, будет жить в теченее <code>math</code> секунд. Переменная <code>life</code> хранит её время жизни в секундах, <code>lerp</code> &mdash; стремится от 0 до 1 в теченее её жизни.</dd>
+					<dt>emitter (math) { ... }</dt>
+					<dd>Любая сущность, созданная в этом блоке, будет жить в теченее <code>math</code> секунд. Переменная <code>life</code> хранит её время жизни в секундах, <code>lerp</code> &mdash; стремится от 0 до 1 в теченее её жизни.</dd>
 
-						<dt>if (math) { ... }</dt>
-						<dd>Выполняет блок кода только если условие <code>math</code> истинно (не равно нолю).</dd>
+					<dt>if (math) { ... }</dt>
+					<dd>Выполняет блок кода только если условие <code>math</code> истинно (не равно нолю).</dd>
 
-						<dt>distance (math) { ... }</dt>
-						<dd>Выполняет блок кода через каждые <code>math</code> юнитов расстояния. Не имеет смысла в событийных скриптах (таких, как <code>weapon/impact</code>) и должен использоваться только в событиях типа <code>weapon/trail</code>.</dd>
+					<dt>distance (math) { ... }</dt>
+					<dd>Выполняет блок кода через каждые <code>math</code> юнитов расстояния. Не имеет смысла в событийных скриптах (таких, как <code>weapon/impact</code>) и должен использоваться только в событиях типа <code>weapon/trail</code>.</dd>
 
-						<dt>interval (math) { ... }</dt>
-						<dd>Выполняет блок кода каждые <code>math</code> секунд. Как и предыдущий блок, не имеет смысла в событийных скриптах.</dd>
+					<dt>interval (math) { ... }</dt>
+					<dd>Выполняет блок кода каждые <code>math</code> секунд. Как и предыдущий блок, не имеет смысла в событийных скриптах.</dd>
 
-						<dt>shaderList (math) { ... }, modelList (math) { ... }, soundList (math) { ... }, colorList (math) { ... }</dt>
-						<dd>Блок содержит список шейдеров, моделей, звуков или цветов соответственно, элемент списка c номером <code>math</code> назначается соответствующей переменной.</dd>
+					<dt>shaderList (math) { ... }, modelList (math) { ... }, soundList (math) { ... }, colorList (math) { ... }</dt>
+					<dd>Блок содержит список шейдеров, моделей, звуков или цветов соответственно, элемент списка c номером <code>math</code> назначается соответствующей переменной.</dd>
 
-						<dt>colorBlend (math) { ... }</dt>
-						<dd>То же, что и <code>colorList</code>, но выбирается не ближайший к номеру <code>math</code> цвет, а цвета интерполируются.</dd>
-					</dl>
+					<dt>colorBlend (math) { ... }</dt>
+					<dd>То же, что и <code>colorList</code>, но выбирается не ближайший к номеру <code>math</code> цвет, а цвета интерполируются.</dd>
+				</dl>
 
 				<h3>Переменные</h3>
-					<p>
-						Переменные создают контекст для скриптовых комманд. Бывают трёх типов: вещественные, векторные и строковые.
-						Кроме переменных fx-подсистемы есть доступ ко всем переменным вульфкама по их имени.
-					</p>
+				<p>
+					Переменные создают контекст для скриптовых комманд. Бывают трёх типов: вещественные, векторные и строковые.
+					Кроме переменных fx-подсистемы есть доступ ко всем переменным вульфкама по их имени.
+				</p>
 				
 				<h4>Вещественные</h4>				
-					<dl>
-						<dt>colorFade</dt>
-						<dd>Задаёт точку, начиная с которой цвет сущности начинает стремиться к [0;0;0].</dd>
+				<dl>
+					<dt>colorFade</dt>
+					<dd>Задаёт точку, начиная с которой цвет сущности начинает стремиться к [0;0;0].</dd>
 
-						<dt>alphaFade</dt>
-						<dd>То же самое для прозрачности.</dd>
+					<dt>alphaFade</dt>
+					<dd>То же самое для прозрачности.</dd>
 
-						<!--
-							<dt>colorScale</dt>
-							<dt>colorHue</dt>
-							<dd>...</dd>
-						-->
-						
-						<dt>red, green, blue, alpha</dt>
-						<dd>Компоненты цвета сущности.</dd>
+					<!--
+						<dt>colorScale</dt>
+						<dt>colorHue</dt>
+						<dd>...</dd>
+					-->
+					
+					<dt>red, green, blue, alpha</dt>
+					<dd>Компоненты цвета сущности.</dd>
 
-						<dt>size</dt>
-						<dd>Размер сущности</dd>
+					<dt>size</dt>
+					<dd>Размер сущности</dd>
 
-						<dt>width</dt>
-						<dd>Ширина сущности</dd>
+					<dt>width</dt>
+					<dd>Ширина сущности</dd>
 
-						<dt>t0 ... t9</dt>
-						<dd>Временные переменные для сохранения промежуточных значений. Не влияют ни на что.</dd>
-					</dl>
+					<dt>t0 ... t9</dt>
+					<dd>Временные переменные для сохранения промежуточных значений. Не влияют ни на что.</dd>
+				</dl>
 
-				<h4>Векторные</h4>				
-					<dl>
-						<dt>origin</dt>
-						<dd>Положение сущности в пространстве.</dd>
+				<h4>Векторные</h4>
+				<dl>
+					<dt>origin</dt>
+					<dd>Положение сущности в пространстве.</dd>
 
-						<dt>velocity</dt>
-						<dd>Линейная скорость сущности: значение этого вектора каждый кадр прибавляется к <code>origin</code>.</dd>
+					<dt>velocity</dt>
+					<dd>Линейная скорость сущности: значение этого вектора каждый кадр прибавляется к <code>origin</code>.</dd>
 
-						<dt>angles</dt>
-						<dd>Углы поворота сущности относительно [0;0;0].</dd>
+					<dt>angles</dt>
+					<dd>Углы поворота сущности относительно [0;0;0].</dd>
 
-						<dt>dir</dt>
-						<dd>Вектор направления сущности. </dd>
+					<dt>dir</dt>
+					<dd>Вектор направления сущности. </dd>
 
-						<!--
-							<dt>parentOrigin</dt>
-							<dt>parentVelocity</dt>
-							<dt>parentAngles</dt>
-							<dt>parentDir</dt>
-							<dd>...</dd>
-						-->
+					<!--
+						<dt>parentOrigin</dt>
+						<dt>parentVelocity</dt>
+						<dt>parentAngles</dt>
+						<dt>parentDir</dt>
+						<dd>...</dd>
+					-->
 
-						<dt>color</dt>
-						<dd>Цвет вершн сущности.</dd>
+					<dt>color</dt>
+					<dd>Цвет вершн сущности.</dd>
 
-						<dt>v0 ... v9</dt>
-						<dd>Временные переменные для сохранения промежуточных значений. Не влияют ни на что.</dd>
-					</dl>
+					<dt>v0 ... v9</dt>
+					<dd>Временные переменные для сохранения промежуточных значений. Не влияют ни на что.</dd>
+				</dl>
 					
 
 				<h4>Строковые</h4>				
-					<dl>
-						<dt>shader</dt>
-						<dd>Шейдер, накладываемый на сущность.</dd>
+				<dl>
+					<dt>shader</dt>
+					<dd>Шейдер, накладываемый на сущность.</dd>
 
-						<dt>model</dt>
-						<dd>Модель для отрисовки.</dd>
-					</dl>
+					<dt>model</dt>
+					<dd>Модель для отрисовки.</dd>
+				</dl>
 
 				<h4>Специальные ключевые слова</h4>
-					<dl>
-						<dt>moveGravity floatGravity</dt>
-						<dd>Наделяет сущность гравитацией.</dd>
+				<dl>
+					<dt>moveGravity floatGravity</dt>
+					<dd>Наделяет сущность гравитацией.</dd>
 
-						<dt>moveBounce floatGravity floatFactor </dt>
-						<dd>То же, что и предыдущее, но сущность отскакивает от поверхностей, сохраняя <code>floatFactor</code> первоначальной скорости.</dd>
+					<dt>moveBounce floatGravity floatFactor </dt>
+					<dd>То же, что и предыдущее, но сущность отскакивает от поверхностей, сохраняя <code>floatFactor</code> первоначальной скорости.</dd>
 
-						<dt>impactDeath floatGravity</dt>
-						<dd>То же, что и предыдущее, но сущность исчезает при столкновении с поверхностью.</dd>
+					<dt>impactDeath floatGravity</dt>
+					<dd>То же, что и предыдущее, но сущность исчезает при столкновении с поверхностью.</dd>
 
-						<dt>sink floatDelay floatDepth</dt>
-						<dd>Сущность "впадает" в поверхности на глубину <code>floatDepth</code> с задержкой <code>floatDelay</code>.</dd>
+					<dt>sink floatDelay floatDepth</dt>
+					<dd>Сущность "впадает" в поверхности на глубину <code>floatDepth</code> с задержкой <code>floatDelay</code>.</dd>
 
-						<dt>shaderClear</dt>
-						<dd>Очищает шейдер.</dd>
+					<dt>shaderClear</dt>
+					<dd>Очищает шейдер.</dd>
 
-						<!--
-							<dt>push, pop, pushparent</dt>
-							<dd>...</dd>
-						-->
-					</dl>
+					<!--
+						<dt>push, pop, pushparent</dt>
+						<dd>...</dd>
+					-->
+				</dl>
 
 
 				<h3>Математика</h3>
