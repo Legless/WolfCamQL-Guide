@@ -37,6 +37,7 @@
 						<li><a href="#small-wiles" class="scroll-link">Небольшие хитрости</a></li>
 						<li><a href="#links" class="scroll-link">Ссылки</a></li>
 						<li><a href="#epilogue" class="scroll-link">Послесловие</a></li>
+						<li><a href="#comments" class="scroll-link">Комментарии</a></li>
 					</ul>
 				</nav>
 			</section>
@@ -1200,6 +1201,33 @@
 				<h2>Послесловие</h2>
 				<p>...</p>
 			</section>
+
+			<section id="comments">
+				<div id="disqus_thread"></div>
+				<script>
+					var disqus_config = function () {
+						this.page.url = "http://legless.github.io/WolfCamQL-Guide/"; 
+						this.page.identifier = "main-page";
+					};
+					(function() { 
+						var d = document, s = d.createElement('script');
+						s.src = '//wolfcam-guide.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			</section>
 		</div>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-90248229-2', 'auto');
+			ga('send', 'pageview');
+		</script>
 	</body>
 </html>
