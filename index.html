@@ -478,6 +478,58 @@
 					Яркость карты будет увеличена в 3*2^0=3 раза.
 				</p>
 
+				<h3>Автовызываемые конфиги</h3>
+				<p>
+					Wolfcam автоматически вызывает файлы конфигов, лежащие в директории /wolfcam-ql, при наступлении определенных событий. С помощью этого можно, например, автоматически скрывать и показывать HUD при переходе в режим свободной камеры.
+				</p>
+				<table>
+					<tr><th>Конфиг</th>
+						<th>Событие</th></tr>
+
+					<tr><th>follow.cfg</th>
+						<td>Слежение а игроком (если демо записано в режиме наблюдателя)</td></tr>
+
+					<tr><th>freecam.cfg</th>
+						<td>Переход в режим свободной камеры</td></tr>
+
+					<tr><th>spectator.cfg</th>
+						<td>?</td></tr>
+
+					<tr><th>ingame.cfg</th>
+						<td>Переключение в вид из глаз своего игрока</td></tr>
+
+					<tr><th>gameend.cfg, gamestart.cfg</th>
+						<td>начало и конец игры</td></tr>
+
+					<tr><th>roundstart.cfg</th>
+						<td>Начало раунда (в CA, FreezeTag)</td></tr>
+
+					<tr><th>firstpersonswitch.cfg</th>
+						<td>Переключение камеры между игроками (в демо)</td></tr>
+
+					<tr><th>wolfcamfirstpersonswitch.cfg</th>
+						<td>Переключение камеры с помощью <code>/follow</code></td></tr>
+
+					<tr><th>scoreboardon.cfg, scoreboardoff.cfg</th>
+						<td>Показ и скрытие скорборда</td></tr>
+				</table>
+				<p>
+					Также конфиги, название которых совпадает с названием карты (например, campgrounds.cfg, ironworks.cfg) автоматически вызываются при загрузке соответствующей карты.
+				</p>
+				<p>
+					Конфиги, вызываемые при загрузке демки с соответствующим Gametype: duel.cfg, ffa.cfg, tdm.cfg, ca.cfg, ctf.cfg, 1fctf.cfg, obelisk.cfg, harvester.cfg, freezetag.cfg, domination.cfg, ad.cfg, rr.cfg, (cpma) ntf.cfg, (cpma) 2v2.cfg, (cpma) hm.cfg, iffa.cfg, ictf.cfg, i* (для insta-*).
+				</p>
+				<p>
+					Переменные, вызываемые при смене оружия текущим игроком: cg_weaponDefault (по-умолчанию), cg_weaponNone, cg_weaponGauntlet, cg_weaponMachineGun, cg_weaponShotgun, cg_weaponGrenadeLauncher, cg_weaponRocketLauncher, cg_weaponLightningGun, cg_weaponRailGun, cg_weaponPlasmaGun, cg_weaponBFG, cg_weaponGrapplingHook, cg_weaponNailGun, cg_weaponProximityLauncher, cg_weaponChainGun, cg_weaponHeavyMachineGun.
+				</p>
+				<p>
+					Например: 
+					<code class="box">
+						set cg_weaponRailGun "cg_fov 90; cg_drawCrosshair 1" <br />
+						set cg_weaponDefault "cg_fov 110; cg_drawCrosshair 4"
+					</code>
+				</p>
+
 				<h3>Нестандартные модели</h3>
 				<div class="img-wrapper">
 					<a href="images/screenshots/custommodels.jpg" target="_blank"><img src="images/thumbs/custommodels.jpg" width="400" height="225" alt="" /></a>
