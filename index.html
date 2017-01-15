@@ -415,42 +415,41 @@
 				</p>
 
 				<h3>Сообщения об убийстве</h3>
-				<div class="img-wrapper">
-					<a href="images/screenshots/fragmessage.jpg" target="_blank"><img src="images/thumbs/fragmessage.jpg" width="400" height="225" alt="" /></a>
-				</div>
 				<p>
 					Wolfcam позволяет изменить стандартное сообщение <b>«You fragged someone»</b> по своему вкусу с помощь переменной <code>/cg_drawFragMessageTokens</code>. В её значение которой подставляются специальные токены, которые движок Вульфкама позже заменяет на их значения, например: <code>/cg_drawFragMessageTokens "%k %i %v"</code>. 
 				</p>
 				<p>
-					Доступные токены:
+					
 				</p>
+				<table>
+					<tr><th colspan="2">Доступные токены:</th></tr>
+					<tr><th>Параметр</th>
+						<th>Описание</th></tr>
 
-				<dl>
-					<dt>%v, %V</dt><dd>Имя убитого (с цветами и без цветов соответственно)</dd>
-					<dt>%k, %K</dt><dd>Имя убийцы</dd>
-					<dt>%t, %T</dt><dd>Цве команды убитого и убийцы соответственно</dd>
-					<dt>%n, %N</dt><dd>Флаг страны убитого и убийцы</dd>
-					<dt>%l, %L</dt><dd>Клан-таг убитого (с цветами и без цветов)</dd>
-					<dt>%x, %X</dt><dd>Клан-таг убийцы</dd>
-					<dt>%q</dt><dd>Сообщения как в Q3 ("player ate player2's rocket")</dd>
-					<dt>%w, %i</dt><dd>Название и иконка оружия</dd>
-				</dl>
-
+					<tr><th>%v, %V</th><td>Имя убитого (с цветами и без цветов соответственно)</td></tr>
+					<tr><th>%k, %K</th><td>Имя убийцы</td></tr>
+					<tr><th>%t, %T</th><td>Цве команды убитого и убийцы соответственно</td></tr>
+					<tr><th>%n, %N</th><td>Флаг страны убитого и убийцы</td></tr>
+					<tr><th>%l, %L</th><td>Клан-таг убитого (с цветами и без цветов)</td></tr>
+					<tr><th>%x, %X</th><td>Клан-таг убийцы</td></tr>
+					<tr><th>%w, %i</th><td>Название и иконка оружия</td></tr>
+					<tr><th>%q</th><td>Сообщения как в Q3 ("player ate player2's rocket")</td></tr>
+				</table>
 				<p>
 					Например: 
 					<code class="box" style="width: 835px;">
 					/cg_drawFragMessageTokens "%n %L %V was fragged by %N %X %K with %i"
 					</code>
 				</p>
-
+				<div class="img-wrapper">
+					<a href="images/screenshots/fragmessage.jpg" target="_blank"><img src="images/thumbs/fragmessage.jpg" width="400" height="225" alt="" /></a>
+				</div>
 				<p>
 					Также существуют подобные команды <code>/cg_drawFragMessageTeamTokens</code> (убийство тиммейта), <code>/cg_drawFragMessageThawTokens</code> (разморозка в FreezeTag), <code>/cg_drawFragMessageFreezeTokens</code> (убийство в FreezeTag),  <code>/cg_drawFragMessageFreezeTeamTokens</code> (тимкилл в FreezeTag).
 				</p>
-
 				<p>
 					Кроме этого, используя <code>/cg_drawFragMessageSeparate 1</code> можно указать Вульфкаму обрабатывать сообщения об убийстве отдельно от других сообщений на экране. Тогда отображение фрагмесседжа можно будет контролировать следующими переменными:
 				</p>
-
 				<dl>
 					<dt>/cg_drawFragMessageX, /cg_drawFragMessageY</dt><dd>Позиция на экране</dd>
 					<dt>/cg_drawFragMessageAlign 0-2</dt><dd>Выравнивание текста (0: слева, 1: по центру, 2: справа)</dd>
