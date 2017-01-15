@@ -378,6 +378,54 @@
 					Гибсы включаются переменной <code>/cl_enableQ3Gibs 1</code>.
 				</p>
 
+				<h3>Сообщения об убийстве</h3>
+				<div class="img-wrapper">
+					<a href="images/screenshots/fragmessage.jpg" target="_blank"><img src="images/thumbs/fragmessage.jpg" width="400" height="225" alt="" /></a>
+				</div>
+				<p>
+					Wolfcam позволяет изменить стандартное сообщение <b>«You fragged someone»</b> по своему вкусу с помощь переменной <code>/cg_drawFragMessageTokens</code>. В её значение которой подставляются специальные токены, которые движок Вульфкама позже заменяет на их значения, например: <code>/cg_drawFragMessageTokens "%k %i %v"</code>. 
+				</p>
+				<p>
+					Доступные токены:
+				</p>
+
+				<dl>
+					<dt>%v, %V</dt><dd>Имя убитого (с цветами и без цветов соответственно)</dd>
+					<dt>%k, %K</dt><dd>Имя убийцы</dd>
+					<dt>%t, %T</dt><dd>Цве команды убитого и убийцы соответственно</dd>
+					<dt>%n, %N</dt><dd>Флаг страны убитого и убийцы</dd>
+					<dt>%l, %L</dt><dd>Клан-таг убитого (с цветами и без цветов)</dd>
+					<dt>%x, %X</dt><dd>Клан-таг убийцы</dd>
+					<dt>%q</dt><dd>Сообщения как в Q3 ("player ate player2's rocket")</dd>
+					<dt>%w, %i</dt><dd>Название и иконка оружия</dd>
+				</dl>
+
+				<p>
+					Например: 
+					<code class="box" style="width: 835px;">
+					/cg_drawFragMessageTokens "%n %L %V was fragged by %N %X %K with %i"
+					</code>
+				</p>
+
+				<p>
+					Также существуют подобные команды <code>/cg_drawFragMessageTeamTokens</code> (убийство тиммейта), <code>/cg_drawFragMessageThawTokens</code> (разморозка в FreezeTag), <code>/cg_drawFragMessageFreezeTokens</code> (убийство в FreezeTag),  <code>/cg_drawFragMessageFreezeTeamTokens</code> (тимкилл в FreezeTag).
+				</p>
+
+				<p>
+					Кроме этого, используя <code>/cg_drawFragMessageSeparate 1</code> можно указать Вульфкаму обрабатывать сообщения об убийстве отдельно от других сообщений на экране. Тогда отображение фрагмесседжа можно будет контролировать следующими переменными:
+				</p>
+
+				<dl>
+					<dt>/cg_drawFragMessageX, /cg_drawFragMessageY</dt><dd>Позиция на экране</dd>
+					<dt>/cg_drawFragMessageAlign 0-2</dt><dd>Выравнивание текста (0: слева, 1: по центру, 2: справа)</dd>
+					<dt>/cg_drawFragMessageStyle [0|3]</dt><dd>Стиль отрисовки (без или с тенью)</dd>
+					<dt>/cg_drawFragMessageFont ""</dt><dd>Название шрифта</dd>
+					<dt>/cg_drawFragMessageScale</dt><dd>Размер сообщения на экране</dd>
+					<dt>/cg_drawFragMessageTime</dt><dd>Время, которое сообщение будет висеть на экране, в милисекундах</dd>
+					<dt>/cg_drawFragMessageColor 0xffffff, /cg_drawFragMessageAlpha [0-255]</dt><dd>Цвет и прозрачность</dd>
+					<dt>/cg_drawFragMessageFade [0|1], /cg_drawFragMessageFadeTime </dt><dd>регулирует плавное исчезание сообщения</dd>
+				</dl>
+
 				<h3>Нестандартные модели</h3>
 				<div class="img-wrapper">
 					<a href="images/screenshots/custommodels.jpg" target="_blank"><img src="images/thumbs/custommodels.jpg" width="400" height="225" alt="" /></a>
@@ -392,6 +440,11 @@
 				</p>
 
 				<br />
+
+				<h3>Кастомные шрифты</h3>
+				<p>
+					...
+				</p>
 
 				<h3>Шейдеры</h3>
 				<p>
@@ -1032,6 +1085,8 @@
 						<a href="http://www.esreality.com/post/2447913/wolfcam-10-0/" target="_blank">10.0</a>, 
 						<a href="http://www.esreality.com/post/2806213/wolfcam-11-0/" target="_blank">11.0</a> — темы на ESR, посвященные старым версиям вульфкама.
 					</li>
+
+					<li><a href="http://quakehub.com/files/wolfcamql/WolfcamQL_tutorial.pdf" target="_blank">Complete WolfcamQL tutorial</a> — pdf-версия одного из англоязычных туториалов по вульфкаму.</li>
 
 					<li>...</li>
 				</ul>
