@@ -159,6 +159,47 @@
 						/at 2:00 cvarinterp cg_fov 90 50 0.5 <br />
 					</code>
 				</p>
+
+				<h3>Читы и не совсем</h3>
+				<div class="img-wrapper">
+					<a href="images/screenshots/cg_wh.jpg" target="_blank"><img src="images/thumbs/cg_wh.jpg" width="400" height="225" alt="" /></a>
+
+					<a href="images/screenshots/cg_rocketaimbot.jpg" target="_blank"><img src="images/thumbs/cg_rocketaimbot.jpg" width="400" height="225" alt="" /></a>
+
+					<a href="images/screenshots/cg_drawspawns.jpg" target="_blank"><img src="images/thumbs/cg_drawspawns.jpg" width="400" height="225" alt="" /></a>
+				</div>
+				<p>
+					Иногда требуется просмотреть демо так, чтобы видеть врагов сквозь стены. Для этого используется команда <code>/cg_wh [0-3]</code>, где: <br />
+					<code>0</code> — выключить wallhack; <br />
+					<code>1</code> — включить wallhack; <br />
+					<code>2</code> — включить только для моделей противников; <br />
+					<code>3</code> — только для моделей тиммейтов.
+				</p>
+				<p>
+					Кроме неё существуют: 
+				</p>
+				<dl>
+					<dt>/cg_whShader, /cg_whEnemyShader</dt>
+					<dd>Шейдер для эффекта валлхака для тиммейтов и врагов, по умолчанию wc/wallhack.</dd>
+
+					<dt>/cg_playerShader</dt>
+					<dd>Шейдер, накладываемый на видимых игроков или их части.</dd>
+
+					<dt>/cg_whColor 0xffffff, /cg_whAlpha [0-100], <br /> /cg_whEnemyColor 0xffffff, /cg_whEnemyAlpha [0-100] </dt>
+					<dd>Цвет (hex) и яркость эффекта для тиммейтов и врагов..</dd>
+
+					<dt>/cg_itemsWh [0|1]</dt>
+					<dd>Wallhack для лежащих на карте предметов (оружие, повер-апы).</dd>
+
+					<dt>/cg_whIncludeDeadBody [0|1], <br /> /cg_whIncludeProjectile [0|1]</dt>
+					<dd>Включать ли wallhack для убитых игроков и летящих снарядов.</dd>
+				</dl>
+				<p>
+					Команда <code>/cg_rocketAimbot [0|1]</code> включает указатель прицела для ракетницы, показывая, в какую точку надо стрелять, чтобы попасть по летящему игроку. 
+				</p>
+				<p>
+					Команда <code>/cg_drawSpawns [0|1]</code> отображает на карте (ре-)спауны игроков. <code>/cg_drawSpawnsInitial 1</code> разрешает ей показывать первый респаун игроков (в момент, когда начинается игра или когда заходит новый игрок), <code>/cg_drawSpawnsRespawns</code> — показывает респауны. 
+				</p>
 			</section>
 
 			<section id="recording-video">
