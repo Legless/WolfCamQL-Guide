@@ -461,6 +461,23 @@
 					<dt>/cg_drawFragMessageFade [0|1], /cg_drawFragMessageFadeTime </dt><dd>регулирует плавное исчезание сообщения</dd>
 				</dl>
 
+				<h3>/r_mapOverBrightBitsValue</h3>
+				<p>
+					Wolfcam позволяет более тонко настраивать яркость текстур карты с помощью <code>/r_mapOverBrightBits</code>. По-умолчанию, QL/Q3 оперируют степенями двойки, например: <code>/r_mapOverBrightBits 0</code> означает, что все пиксели текстур будут ярче в 2^0=1 раз (т.е., останутся без изменений), <code>/r_mapOverBrightBits 2</code> — в 2^2=4 раза, <code>/r_mapOverBrightBits 3</code> — в 2^3=8 раз и т.д. 
+				</p>
+				<p>
+					Может случиться, что значение <code>2</code> слишком тёмное, а <code>3</code> — слишком яркое. Для этого в Вульфкаме есть переменная <code>/r_mapOverBrightBitsValue</code>, используемая чтобы показать основание степени. В результате итоговая формула для подсчета яркости будет выглядтеть так: <code>/r_mapOverBrightBitsValue * 2^/r_mapOverBrightBits</code>.
+				</p>
+				<p>
+					Например: 
+					<code class="box">
+						/r_mapOverBrightBitsValue 3 <br />
+						/r_mapOverBrightBits 0
+					</code>
+
+					Яркость карты будет увеличена в 3*2^0=3 раза.
+				</p>
+
 				<h3>Нестандартные модели</h3>
 				<div class="img-wrapper">
 					<a href="images/screenshots/custommodels.jpg" target="_blank"><img src="images/thumbs/custommodels.jpg" width="400" height="225" alt="" /></a>
