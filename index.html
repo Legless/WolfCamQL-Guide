@@ -306,7 +306,39 @@
 				</p>
 
 				<h4>Команда /ecam</h4>
-				<p>...</p>
+				<p>
+					Одна из самых мощных команд WolfCam — команда <code>/ecam команда аргументы</code>, которая используется для редактирования выбранных (с помощью <code>/selectcamerapoint</code>) точек пути. 
+				</p>
+				<p>
+					Использование: 
+				</p>
+				<p>
+					<code>/ecam type [spline|interp|jump|curve|splineBezier|splineCatmullRom]</code> выбирает тип интерполяции для точек камеры. Возможные варианты: 
+				</p>
+				<ul>
+					<li><code>interp</code> — линейная интреполяция, полет по прямой;</li>
+					<li><code>jump</code> — отсутствие движения между точками, камера просто «прыгает» между ними;</li>
+					<li><code>spline</code> — создаёт сплайн, проходящий через все точки пути камеры, камера при 
+					этом <b>не обязательно</b> пролетает точно по выбранным точкам, но стремится к этому;</li>
+					<li><code>curve</code> — создаёт сплайн по трём точкам, камера обязательно пролетает точно по точкам;</li>
+					<li><code>splineBezier</code> — кривая Безье;</li>
+					<li><code>splineCatmullRom</code> — кривая Катмулла-Рома, даёт самый плавный полёт.</li>
+				</ul>
+				<p>
+					Вариант по умолчани можно выбрать с помощью команды <code>/cg_cameraDefaultOriginType [spline|interp|jump|curve|splineBezier|splineCatmullRom]</code>. 
+				</p>
+				<p>
+					<code>/ecam command комманда</code> — вызывает <code>комманду</code>, когда камера пролетает по выбранной точке. 
+				</p>
+				<p>
+					<code>/ecam numsplines количество</code> — количество сегментов, на которые будет разбит текущий сплайн. Больше — плавнее полёт. 
+				</p>
+				<p>
+					<code>/ecam rebase [origin|angles|dir|dirna|time|timen &lt;server time&gt;]</code> — корректирует соответствующий параметр точек так, чтобы он соответствовал текущему. Например, <code>/ecam rebase time</code> перенесёт выбранные точки так, чтобы путь начинался с текущего времени, <code>/ecam rebase origin</code> — перенесёт путь в пространстве так, чтобы относительные положения точек между собой сохранились и т.д.
+				</p>
+				<p>
+					<code>/ecam smooth [velocity|avgvelocity|origin|angles|originf|anglesf|time]</code> — сгладить соответствующие параметры пути так, чтобы избежать слишком резкого полёта камеры.
+				</p>
 			</section>
 
 			<section id="advanced-setup">
