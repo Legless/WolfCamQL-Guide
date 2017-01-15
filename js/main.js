@@ -11,4 +11,9 @@ $(function () {
 		return false;
 	});
 	
+
+	// 
+	$( '.carousel' ).slick( {
+
+	} );
 });

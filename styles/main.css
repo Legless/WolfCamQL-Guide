@@ -206,3 +206,16 @@ dd {
 #scrolltop:active, #scrolltop:focus {
 	outline: none;
 }
+
+.carousel {
+	width: 800px;
+	margin: 20px auto;
+}
+
+.carousel img {
+	margin: auto;
+}
+
+.carousel .text {
+	text-align: center;
+}

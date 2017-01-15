@@ -5,10 +5,13 @@
 		<link href="styles/normalize.css" rel="stylesheet" type="text/css" />
 		<link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Scada|Play:700&amp;subset=latin,cyrillic,cyrillic-ext,latin-ext" rel="stylesheet" type="text/css" />
 		<link href="styles/main.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="slick/slick.css" />
+		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 
 		<title>Russian WolfCamQL Guide</title>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="slick/slick.min.js"></script>
 		<script src="js/main.js"></script>
 	</head>
 	<body>
@@ -124,13 +127,11 @@
 					<b>4</b> &mdash; пытается перестроить худ для новых пропорций. <br/>
 				</p>
 
-				<div class="img-box">
-					<a href="images/screenshots/widescreen1.jpg" target="_blank"><img src="images/thumbs/widescreen1.jpg" /></a>
-					<a href="images/screenshots/widescreen2.jpg" target="_blank"><img src="images/thumbs/widescreen2.jpg" /></a>
-					<a href="images/screenshots/widescreen3.jpg" target="_blank"><img src="images/thumbs/widescreen3.jpg" /></a>
-					<a href="images/screenshots/widescreen4.jpg" target="_blank"><img src="images/thumbs/widescreen4.jpg" /></a>
-
-					<div class="clearfix"></div>
+				<div class="carousel">
+					<div><img src="images/screenshots/widescreen1.jpg" /><div class="text">/cg_widescreen 1</div></div>
+					<div><img src="images/screenshots/widescreen2.jpg" /><div class="text">/cg_widescreen 2</div></div>
+					<div><img src="images/screenshots/widescreen3.jpg" /><div class="text">/cg_widescreen 3</div></div>
+					<div><img src="images/screenshots/widescreen4.jpg" /><div class="text">/cg_widescreen 4</div></div>
 				</div>
 			</section>
 
@@ -546,6 +547,23 @@
 
 				<br />
 
+				<h3>Хромакей</h3>
+				<div class="img-wrapper">
+					<a href="images/screenshots/greenscreen.jpg" target="_blank"><img src="images/thumbs/greenscreen.jpg" width="400" height="225" alt="" /></a>
+				</div>
+				<p>
+					Чтобы получить только модели на однородном фоне для хромакея, существуют две команды: <code>/r_fastsky 1</code> и <code>/r_drawworld 0</code>. С помощью команды <code>/r_fastSkyColor 0xffffff</code> можно выбрать hex-цвет фона. 
+				</p>
+				<p>
+					Команда <code>/entityfilter [all|тип|номер]</code> скрывает сущности по типу или номеру (<code>/cg_drawEntNumbers 1</code>). <code>/entityfilter clear</code> сбрасывает выставленные фильтры.
+				</p>
+				<p>
+					Доступные типы: general, player (игроки), item (предметы на карте), missile (снаряды), mover, beam (след от шафта/рейла), portal, speaker, pushtrigger, teleporttrigger, invisible, grapple, team, events.
+				</p>
+				<p>
+					Например, <code>/entityfilter item</code> уберет с карты лежащие на земле предметы. 
+				</p>
+
 				<h3>Кастомные шрифты</h3>
 				<p>
 					WolfCam поддерживает использование ttf-шрифтов в HUD-е. Для этого файл шрифта нужно скопировать куда-нибудь в директорию /wolfcam-ql/ и указать его название (вместе с путём относительно директории) в соответствующей переменной, например <code>/cg_drawFragMessageFont "fonts/my_cool_font.ttf"</code>.
@@ -557,6 +575,9 @@
 				</p>
 				<p>
 					Единственное отличие шейдеров wolfcam от QL/Q3 — <a href="http://toolz.nexuizninjaz.com/shader/shader/section6.htm#6.1.3" target="_blank">animMap</a> поддерживает анимацию длиннее восьми текстур.
+				</p>
+				<p>
+					Wolfcam поддерживает перезапись встроенных шейдеров. Для этого файл с кодом соответствующего шейдера следует положить в папку /wolfcam-ql/shaderoverride.
 				</p>
 
 				<h3>Steam Workshop</h3>
@@ -628,16 +649,14 @@
 				</p>
 
 				<p>
-					По фотографиям (кликните на них чтобы рассмотреть лучше) видно, что малые значения <code>/mme_blurframes</code> создают очень ступенчатую картинку, а длина шлейфа зависит от <code>/cl_aviFrame</code>.
+					По фотографиям видно, что малые значения <code>/mme_blurframes</code> создают очень ступенчатую картинку, а длина шлейфа зависит от <code>/cl_aviFrame</code>.
 				</p>
 
-				<div class="img-box">
-					<a href="images/screenshots/mblur-30-5.jpg" target="_blank"><img src="images/thumbs/mblur-30-5.jpg" /></a>
-					<a href="images/screenshots/mblur-30-15.jpg" target="_blank"><img src="images/thumbs/mblur-30-15.jpg" /></a>
-					<a href="images/screenshots/mblur-30-30.jpg" target="_blank"><img src="images/thumbs/mblur-30-30.jpg" /></a>
-					<a href="images/screenshots/mblur-180-30.jpg" target="_blank"><img src="images/thumbs/mblur-180-30.jpg" /></a>
-
-					<div class="clearfix"></div>
+				<div class="carousel">
+					<div><img src="images/screenshots/mblur-30-5.jpg" /><div class="text">/cl_aviFrame 30, /mme_blurframes 5</div></div>
+					<div><img src="images/screenshots/mblur-30-15.jpg" /><div class="text">/cl_aviFrame 30, /mme_blurframes 15</div></div>
+					<div><img src="images/screenshots/mblur-30-30.jpg" /><div class="text">/cl_aviFrame 30, /mme_blurframes 30</div></div>
+					<div><img src="images/screenshots/mblur-180-30.jpg" /><div class="text">/cl_aviFrame 180, /mme_blurframes 30</div></div>
 				</div>
 
 				<p>
@@ -670,10 +689,6 @@
 				<br>
 
 				<h3>Bloom и цветокоррекция</h3>
-				<div class="img-wrapper">
-					<a href="images/screenshots/bloom_disabled.jpg" target="_blank"><img src="images/thumbs/bloom_disabled.jpg" width="400" height="225" alt="" /></a>
-					<a href="images/screenshots/bloom_enabled.jpg" target="_blank"><img src="images/thumbs/bloom_enabled.jpg" width="400" height="225" alt="" /></a>
-				</div>
 				<p>
 					Bloom (блум) &mdash; это один из эффектов постобработки, который делает яркие части изображения ещё ярче, создавая вокруг них свечение.
 					Принцип работы блума заключается в следующем:
@@ -685,6 +700,10 @@
 					<li>Выолняется цветокоррекция исходного кадра и текстуры блума: изменяются их насыщенности и яркости</li>
 					<li>Размытая текстура блума складывается с текущим кадром</li>
 				</ol>
+				<div class="carousel">
+					<div><img src="images/screenshots/bloom_disabled.jpg" /></div>
+					<div><img src="images/screenshots/bloom_enabled.jpg" /></div>
+				</div>
 				<p>
 					В Вульфкаме блум включается переменной <code>/r_enableBloom 1</code>, и регулируется следующими переменными:
 					<code class="box">
