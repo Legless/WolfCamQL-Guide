@@ -70,14 +70,14 @@
 					И вот, в один прекрасный день один прекрасный человек сделал WolfCamQL &mdash; изначально модифицированный ioquake для просмотра демо-файлов без установленного Quake Live, а сейчас &mdash; полноценный инструмент для муви-мейкинга, разросшийся сейчас до версии 11.4. Пока что это единственная программа, решившая продолжить путь q3mme в стане Quake Live.
 				</p>
 				<p>
-					Он поддерживает 68 (q3), 73 (браузерный ql), 90 (steam ql) и 91-й протоколы, скрипты, совместимые с q3mme и кучу всего, нужного и не очень для создания полноценного игрового видео.
+					Он поддерживает 68 (q3), 73 (браузерный ql), 90 (steam ql) и 91-й протоколы, скрипты, совместимые с q3mme и кучу всего нужного и не очень для создания полноценного игрового видео.
 				</p>
 			</section>
 
 			<section id="install">
 				<h2>Установка</h2>
 				<p>
-					Установка этой замечательной программы очень проста: нужно только лишь скачать последнюю версию (на данный момент это <a href="https://github.com/brugal/wolfcamql/releases/tag/v11.4" target="_blank">WolfCam 11.4</a>) и распаковать её куда-нибудь.
+					Установка этой замечательной программы очень проста: нужно только скачать последнюю версию (на данный момент это <a href="https://github.com/brugal/wolfcamql/releases/tag/v11.4" target="_blank">WolfCam 11.4</a>) и распаковать её куда-нибудь.
 				</p>
 				<p>
 					После чего нужно скопировать из папки QuakeLive все паки. Для этого из директории, куда установлен QuakeLive, надо скопировать все *.pk3 файлы в папку /baseq3/ в папке, где установлен WolfCam.
@@ -87,20 +87,20 @@
 			<section id="basic-setup">
 				<h2>Базовая настройка</h2>
 				<p>
-					По-умолчанию WolfCam снимает видео на диск C:\. Что бы это исправить, необходимо запускать его с другими настройками. Для этого нужно создать файл *.bat, где написать:
+					По умолчанию WolfCam снимает видео на диск C:\. Чтобы это исправить, необходимо запускать его с другими настройками: нужно создать файл с расширением *.bat, в котором написать:
 					<code>
 						start <i>путь_к_вульфкаму</i>\wolfcamql.exe +set fs_homepath "<i>путь_к_вульфкаму</i>"
 					</code>
-					После этого WolfCam будет сохрнять видео и скриншоты указанную директорию (в данном случае туда же, где лежит его exe-файл) в папки wolfcamql/videos/ и wolfcamql/screenshots/ соответственно. Запускать програму нужно будет именно этим файлом.
+					После этого WolfCam будет сохранять видео и скриншоты указанную директорию (в данном случае туда же, где лежит его exe-файл) в папки wolfcamql/videos/ и wolfcamql/screenshots/ соответственно. Запускать програму нужно будет именно этим bat-файлом.
 				</p>
 				<p>
-					Что бы настроить разрешение окна Вульфкама, необходимо использовать следующие три переменные:
+					Чтобы настроить разрешение окна Вульфкама, необходимо использовать следующие три переменные:
 					<code class="box">
 						/r_mode -1 <br />
 						/r_customWidth 1280 <br />
 						/r_customHeight 720
 					</code>
-					Первая из них включает режим "ручной" подстановки рзрешения, а другие регулирует ширину и высоту окна соответственно. Изменения вступят силу после рестарта программы или использования команды <code>/vid_restart</code>.
+					Первая из них включает режим «ручной» подстановки разрешения, а другие регулируют ширину и высоту окна соответственно. Изменения вступят силу после рестарта программы или использования команды <code>/vid_restart</code>.
 				</p>
 				<p>
 					Современным стандартом качества является формат 16:9, однако никто не мешает вам использовать совершенно любое соотношение сторон.
@@ -114,7 +114,7 @@
 						/r_visibleWindowHeight 720
 					</code>
 
-					При этом, <code>/r_custom*</code> станут регулировать размер выходного кадра видео, а <code>/r_visibleWindow*</code> — размеры окна программы.
+					При этом, переменные <code>/r_custom*</code> станут регулировать размер выходного кадра видео, а <code>/r_visibleWindow*</code> — размеры окна программы.
 				</p>
 
 				<h3>HUD</h3>
@@ -142,7 +142,7 @@
 					Кроме использования команды <code>/timescale x</code> для ускорения и замедления воспроизведения демо файла в x раз, WolfCam позволяет использовать команду <code>/seekclock mm:ss</code> для перехода к нужному времени по игровому таймеру.
 				</p>
 				<p>
-					Перематывать демо можно использовать команды <code>/rewind x</code> и <code>/fastforward x</code> для перемотки назад и вперед на x секунд соответственно. Для удобства существует команда <code>+mouseseek</code> для перемотки мышкой. Если её забиндить на клавишу, например <code>/bind x +mouseseek</code>, то, держа эту клавишу зажатой, перематывать демо можно будет с помощью движений мыши.
+					Перематывать демо можно использовать команды <code>/rewind x</code> и <code>/fastforward x</code> для перемотки назад и вперед на <b>x</b> секунд соответственно. Также существует команда <code>+mouseseek</code> для перемотки мышкой. Если её забиндить на клавишу, например <code>/bind x +mouseseek</code>, то, держа эту клавишу зажатой, перематывать демо можно будет с помощью движений мыши.
 				</p>
 				<p>
 					Также существует команда <code>/fragforward</code>, при исполнении которой последовательно показываются все фраги, сделанные пишущим демо игроком. Остановить проход по фрагам можно, выполнив команду <code>/fragforward</code> ещё раз.
@@ -192,7 +192,7 @@
 					<dd>Шейдер, накладываемый на видимых игроков или их части.</dd>
 
 					<dt>/cg_whColor 0xffffff, /cg_whAlpha [0-100], <br /> /cg_whEnemyColor 0xffffff, /cg_whEnemyAlpha [0-100] </dt>
-					<dd>Цвет (hex) и яркость эффекта для тиммейтов и врагов..</dd>
+					<dd>Цвет (hex) и яркость эффекта для тиммейтов и врагов.</dd>
 
 					<dt>/cg_itemsWh [0|1]</dt>
 					<dd>Wallhack для лежащих на карте предметов (оружие, повер-апы).</dd>
@@ -241,28 +241,28 @@
 
 				<h3>Продвинутый захват (фрикамминг, переключение PoV-ов)</h3>
 				<p>
-					Кроме обычной съёмки WolfCam даёт возможность летать по карте как спектатор. Команда <code>/freecam</code> (по-умолчанию забиндена на Enter) включает и выключает режим фрикамминга, переменная <code>/cg_freecam_noclip 1|0</code> включает/выключает прохождение камеры сквозь стены.
+					Кроме обычной съёмки WolfCam даёт возможность летать по карте как спектатор. Команда <code>/freecam</code> (по умолчанию забиндена на Enter) включает и выключает режим фрикамминга, переменная <code>/cg_freecam_noclip 1|0</code> включает/выключает прохождение камеры сквозь стены.
 				</p>
 				<p>
-					<code>/cg_freecam_crosshair 1|1</code> — показывать или нет прицел в режиме свободной камеры, <code>/cg_freecam_sensitivity</code> — чувствительность мыши, <code>/cg_freecam_speed</code> — скорость полёта камеры.
+					<code>/cg_freecam_crosshair 1|0</code> — показывать или нет прицел в режиме свободной камеры, <code>/cg_freecam_sensitivity</code> регулирует чувствительность мыши, <code>/cg_freecam_speed</code> — скорость полёта камеры.
 				</p>
 				<p>
-					Команда <code>/cg_freecam_unlockPitch 1|0</code> разрешает или запрещает переорачивать камеру вверх ногами. 
+					Команда <code>/cg_freecam_unlockPitch 1|0</code> разрешает или запрещает переворачивать камеру вверх ногами, ведя мышь вверх. 
 				</p>				
 				<div class="img-wrapper">
 					<a href="images/screenshots/enemys_pov.jpg" target="_blank"><img src="images/thumbs/enemys_pov.jpg" width="400" height="225" alt="" /></a>
 				</div>
 				<p>
-					Кроме этого существует возможность смотреть демку от лица других игроков: сначала нужно узнать id игрока используя команду
+					Кроме этого существует возможность смотреть демку от лица других игроков. Сначала нужно узнать id игрока используя команду <code>/players</code>. 
 
-					<code>/players</code>
 					Вывод этой команды примерно такой:
 					<code class="box">X 00 Cypher<br />
 						  X 01 Cooller<br />
 						  X 02 FanJibo</code>
-					И для просмотре демки от другого лица остается лишь выполнить команду
-					<code class="box">/follow <i>номер_игрока</i></code>
-
+					Для просмотра демки от другого лица остается лишь выполнить команду
+					<code>/follow номер_игрока</code>.
+				</p>
+				<p>
 					Ввиду технической особенности демок QuakeLive, вы не сможете посмотреть моменты глазами игрока, который находится слишком далеко от снимающего демку.
 				</p>
 
@@ -281,10 +281,10 @@
 						/cg_drawCameraPointInfo 1<br />
 						/cg_drawCameraPath 1
 					</code>
-					После этого можно создав весь путь, выставляя ключевые точки там, где нужно с помощью этой же команды.
+					После этого можно создаnm весь путь, выставляя ключевые точки там, где нужно с помощью этой же команды.
 				</p>
 				<p>
-					Проиграть полученный путь можно с помощью команды <code>/playcamera</code>	, удалить &mdash; <code>/clearcamerapoints</code>.
+					Проиграть полученный путь можно с помощью команды <code>/playcamera</code>, удалить — <code>/clearcamerapoints</code>.
 				</p>
 				<p>
 					Команда <code>/addcamerapoint</code> <b>добавляет новую</b> точку, если текущее время на таймере больше, чем время последней созданной точки камеры, <b>вставляет точку в путь</b>, если таймер находится между двумя точками и <b>редактирует точку</b>, если текущее время совпадает с временем какой-лио точки.
@@ -315,7 +315,7 @@
 					Использование: 
 				</p>
 				<p>
-					<code>/ecam type [spline|interp|jump|curve|splineBezier|splineCatmullRom]</code> выбирает тип интерполяции для точек камеры. Возможные варианты: 
+					<code>/ecam type тип</code> выбирает тип интерполяции для точек камеры. Возможные варианты: 
 				</p>
 				<ul>
 					<li><code>interp</code> — линейная интреполяция, полет по прямой;</li>
@@ -327,7 +327,7 @@
 					<li><code>splineCatmullRom</code> — кривая Катмулла-Рома, даёт самый плавный полёт.</li>
 				</ul>
 				<p>
-					Вариант по умолчани можно выбрать с помощью команды <code>/cg_cameraDefaultOriginType [spline|interp|jump|curve|splineBezier|splineCatmullRom]</code>. 
+					Вариант по умолчани можно выбрать с помощью команды <code>/cg_cameraDefaultOriginType тип</code>. 
 				</p>
 				<p>
 					<code>/ecam command комманда</code> — вызывает <code>комманду</code>, когда камера пролетает по выбранной точке. 
@@ -432,10 +432,7 @@
 
 				<h3>Сообщения об убийстве</h3>
 				<p>
-					Wolfcam позволяет изменить стандартное сообщение <b>«You fragged someone»</b> по своему вкусу с помощь переменной <code>/cg_drawFragMessageTokens</code>. В её значение которой подставляются специальные токены, которые движок Вульфкама позже заменяет на их значения, например: <code>/cg_drawFragMessageTokens "%k %i %v"</code>. 
-				</p>
-				<p>
-					
+					Wolfcam позволяет изменить стандартное сообщение <b>«You fragged someone»</b> по своему вкусу с помощь переменной <code>/cg_drawFragMessageTokens</code>. В её значение подставляются специальные токены.
 				</p>
 				<table>
 					<tr><th colspan="2">Доступные токены:</th></tr>
@@ -461,7 +458,7 @@
 					<a href="images/screenshots/fragmessage.jpg" target="_blank"><img src="images/thumbs/fragmessage.jpg" width="400" height="225" alt="" /></a>
 				</div>
 				<p>
-					Также существуют подобные команды <code>/cg_drawFragMessageTeamTokens</code> (убийство тиммейта), <code>/cg_drawFragMessageThawTokens</code> (разморозка в FreezeTag), <code>/cg_drawFragMessageFreezeTokens</code> (убийство в FreezeTag),  <code>/cg_drawFragMessageFreezeTeamTokens</code> (тимкилл в FreezeTag).
+					Также существуют команды <code>/cg_drawFragMessageTeamTokens</code> (убийство тиммейта), <code>/cg_drawFragMessageThawTokens</code> (разморозка в FreezeTag), <code>/cg_drawFragMessageFreezeTokens</code> (убийство в FreezeTag),  <code>/cg_drawFragMessageFreezeTeamTokens</code> (тимкилл в FreezeTag).
 				</p>
 				<p>
 					Кроме этого, используя <code>/cg_drawFragMessageSeparate 1</code> можно указать Вульфкаму обрабатывать сообщения об убийстве отдельно от других сообщений на экране. Тогда отображение фрагмесседжа можно будет контролировать следующими переменными:
@@ -479,7 +476,7 @@
 
 				<h3>/r_mapOverBrightBitsValue</h3>
 				<p>
-					Wolfcam позволяет более тонко настраивать яркость текстур карты с помощью <code>/r_mapOverBrightBits</code>. По-умолчанию, QL/Q3 оперируют степенями двойки, например: <code>/r_mapOverBrightBits 0</code> означает, что все пиксели текстур будут ярче в 2^0=1 раз (т.е., останутся без изменений), <code>/r_mapOverBrightBits 2</code> — в 2^2=4 раза, <code>/r_mapOverBrightBits 3</code> — в 2^3=8 раз и т.д. 
+					Wolfcam позволяет более тонко настраивать яркость текстур карты с помощью <code>/r_mapOverBrightBits</code>. По умолчанию, QL/Q3 оперируют степенями двойки, например: <code>/r_mapOverBrightBits 0</code> означает, что все пиксели текстур будут ярче в 2^0=1 раз (т.е., останутся без изменений), <code>/r_mapOverBrightBits 2</code> — в 2^2=4 раза, <code>/r_mapOverBrightBits 3</code> — в 2^3=8 раз и т.д. 
 				</p>
 				<p>
 					Может случиться, что значение <code>2</code> слишком тёмное, а <code>3</code> — слишком яркое. Для этого в Вульфкаме есть переменная <code>/r_mapOverBrightBitsValue</code>, используемая чтобы показать основание степени. В результате итоговая формула для подсчета яркости будет выглядтеть так: <code>/r_mapOverBrightBitsValue * 2^/r_mapOverBrightBits</code>.
@@ -491,7 +488,7 @@
 						/r_mapOverBrightBits 0
 					</code>
 
-					Яркость карты будет увеличена в 3*2^0=3 раза.
+					Яркость карты будет увеличена в 3 &times; 2^0=3 раза.
 				</p>
 
 				<h3>Автовызываемые конфиги</h3>
@@ -503,7 +500,7 @@
 						<th>Событие</th></tr>
 
 					<tr><th>follow.cfg</th>
-						<td>Слежение а игроком (если демо записано в режиме наблюдателя)</td></tr>
+						<td>Слежение за игроком (если демо записано в режиме наблюдателя)</td></tr>
 
 					<tr><th>freecam.cfg</th>
 						<td>Переход в режим свободной камеры</td></tr>
@@ -515,7 +512,7 @@
 						<td>Переключение в вид из глаз своего игрока</td></tr>
 
 					<tr><th>gameend.cfg, gamestart.cfg</th>
-						<td>начало и конец игры</td></tr>
+						<td>Начало и конец игры</td></tr>
 
 					<tr><th>roundstart.cfg</th>
 						<td>Начало раунда (в CA, FreezeTag)</td></tr>
@@ -530,13 +527,13 @@
 						<td>Показ и скрытие скорборда</td></tr>
 				</table>
 				<p>
-					Также конфиги, название которых совпадает с названием карты (например, campgrounds.cfg, ironworks.cfg) автоматически вызываются при загрузке соответствующей карты.
+					Также конфиги, название которых совпадает с названием карты (например, <code>campgrounds.cfg</code>, <code>ironworks.cfg</code>) автоматически вызываются при загрузке соответствующей карты.
 				</p>
 				<p>
-					Конфиги, вызываемые при загрузке демки с соответствующим Gametype: duel.cfg, ffa.cfg, tdm.cfg, ca.cfg, ctf.cfg, 1fctf.cfg, obelisk.cfg, harvester.cfg, freezetag.cfg, domination.cfg, ad.cfg, rr.cfg, (cpma) ntf.cfg, (cpma) 2v2.cfg, (cpma) hm.cfg, iffa.cfg, ictf.cfg, i* (для insta-*).
+					Конфиги, вызываемые при загрузке демки с соответствующим Gametype: <code>duel.cfg</code>, <code>ffa.cfg</code>, <code>tdm.cfg</code>, <code>ca.cfg</code>, <code>ctf.cfg</code>, <code>1fctf.cfg</code>, <code>obelisk.cfg</code>, <code>harvester.cfg</code>, <code>freezetag.cfg</code>, <code>domination.cfg</code>, <code>ad.cfg</code>, <code>rr.cfg</code>, <code>ntf.cfg</code>, <code>2v2.cfg</code>, <code>hm.cfg</code>, <code>iffa.cfg</code>, <code>ictf.cfg</code> и другие <code>i*</code> (для instagib-режимов).
 				</p>
 				<p>
-					Переменные, вызываемые при смене оружия текущим игроком: cg_weaponDefault (по-умолчанию), cg_weaponNone, cg_weaponGauntlet, cg_weaponMachineGun, cg_weaponShotgun, cg_weaponGrenadeLauncher, cg_weaponRocketLauncher, cg_weaponLightningGun, cg_weaponRailGun, cg_weaponPlasmaGun, cg_weaponBFG, cg_weaponGrapplingHook, cg_weaponNailGun, cg_weaponProximityLauncher, cg_weaponChainGun, cg_weaponHeavyMachineGun.
+					Переменные, вызываемые при смене оружия текущим игроком: <code>/cg_weaponDefault</code> (по умолчанию), <code>/cg_weaponNone</code>, <code>/cg_weaponGauntlet</code>, <code>/cg_weaponMachineGun</code>, <code>/cg_weaponShotgun</code>, <code>/cg_weaponGrenadeLauncher</code>, <code>/cg_weaponRocketLauncher</code>, <code>/cg_weaponLightningGun</code>, <code>/cg_weaponRailGun</code>, <code>/cg_weaponPlasmaGun</code>, <code>/cg_weaponBFG</code>, <code>/cg_weaponGrapplingHook</code>, <code>/cg_weaponNailGun</code>, <code>/cg_weaponProximityLauncher</code>, <code>/cg_weaponChainGun</code>, <code>/cg_weaponHeavyMachineGun</code>.
 				</p>
 				<p>
 					Например: 
@@ -555,8 +552,7 @@
 					Готовые pak-и, созданные для QL/Q3 нужно копировать в папку <code>/baseq3/</code>, отдельные файлы — в папку <code>/wolfcam-ql/</code>, сохраняя вложенность каталогов.
 				</p>
 				<p>
-					Wolfcam (как и Q3/QL) грузит паки в алфавитном порядке их названий, так что заменяющие паки желательно делать с префиксом из нескольких букв z, например <code>zz-mypack.pk3</code>.
-					Файлы из папки <code>/wolfcam-ql/</code> он грузит в последнюю очередь.
+					Wolfcam (как и Q3/QL) грузит паки в алфавитном порядке их названий, так что заменяющие паки желательно делать с префиксом из нескольких букв z, например <code>zz-mypack.pk3</code>. Файлы из папки <code>/wolfcam-ql/</code> он грузит в последнюю очередь.
 				</p>
 
 				<br />
@@ -566,21 +562,21 @@
 					<a href="images/screenshots/greenscreen.jpg" target="_blank"><img src="images/thumbs/greenscreen.jpg" width="400" height="225" alt="" /></a>
 				</div>
 				<p>
-					Чтобы получить только модели на однородном фоне для хромакея, существуют две команды: <code>/r_fastsky 1</code> и <code>/r_drawworld 0</code>. С помощью команды <code>/r_fastSkyColor 0xffffff</code> можно выбрать hex-цвет фона. 
+					Чтобы получить только модели на однородном фоне для хромакея существуют две команды: <code>/r_fastsky 1</code> и <code>/r_drawworld 0</code>. С помощью команды <code>/r_fastSkyColor 0xffffff</code> можно выбрать hex-цвет фона. 
 				</p>
 				<p>
 					Команда <code>/entityfilter [all|тип|номер]</code> скрывает сущности по типу или номеру (<code>/cg_drawEntNumbers 1</code>). <code>/entityfilter clear</code> сбрасывает выставленные фильтры.
 				</p>
 				<p>
-					Доступные типы: general, player (игроки), item (предметы на карте), missile (снаряды), mover, beam (след от шафта/рейла), portal, speaker, pushtrigger, teleporttrigger, invisible, grapple, team, events.
+					Доступные типы: <code>general</code>, <code>player</code> (игроки), <code>item</code> (предметы на карте), <code>missile</code> (снаряды), <code>mover</code>, <code>beam</code> (след от шафта/рейла), <code>portal</code>, <code>speaker</code>, <code>pushtrigger</code>, <code>teleporttrigger</code>, <code>invisible</code>, <code>grapple</code>, <code>team</code>, <code>events</code>.
 				</p>
 				<p>
 					Например, <code>/entityfilter item</code> уберет с карты лежащие на земле предметы. 
 				</p>
 
-				<h3>Кастомные шрифты</h3>
+				<h3>TTF шрифты</h3>
 				<p>
-					WolfCam поддерживает использование ttf-шрифтов в HUD-е. Для этого файл шрифта нужно скопировать куда-нибудь в директорию /wolfcam-ql/ и указать его название (вместе с путём относительно директории) в соответствующей переменной, например <code>/cg_drawFragMessageFont "fonts/my_cool_font.ttf"</code>.
+					WolfCam поддерживает использование шрифтов в формате ttf. Для этого файл шрифта нужно скопировать куда-нибудь в директорию /wolfcam-ql/ и указать его название (вместе с путём относительно директории) в соответствующей переменной, например <code>/cg_drawFragMessageFont "fonts/my_cool_font.ttf"</code>.
 				</p>
 
 				<h3>Шейдеры</h3>
@@ -604,7 +600,7 @@
 					<a href="images/screenshots/dof.jpg" target="_blank"><img src="images/thumbs/dof.jpg" width="400" height="225" alt="" /></a>
 				</div>
 				<p>
-					Depth of Field (а по-русски "глубна резкости") — это, по сути, размытие всех объектов, которые находятся дальше определённого расстояния от точки фокуса камеры. Поддержка этого отличного эффекта в вульфкаме заключается в трёх переменных: <code>/mme_saveDepth [0|1]</code>, <code>/mme_depthFocus [0-10000]</code> и <code>/mme_depthRange [0-10000]</code>.
+					Depth of Field (а по-русски «глубна резкости») — это, по сути, размытие всех объектов, которые находятся дальше определённого расстояния от точки фокуса камеры. Поддержка этого отличного эффекта в вульфкаме заключается в трёх переменных: <code>/mme_saveDepth [0|1]</code>, <code>/mme_depthFocus [0-10000]</code> и <code>/mme_depthRange [0-10000]</code>.
 				</p>
 				<p>
 					Первая команда включает запись второго видеоряда, включающего в себя только Z-Buffer (буфер глубины, интенсивность пикселей которого зависит от расстояния до камеры) в том же формате, что и основное видео (секвенция картинок или avi-файл).
@@ -616,19 +612,19 @@
 					После захвата полученное видео необходимо обработать для, собственно, включения DoF. Я покажу это на примере Adobe After Effects.
 				</p>
 				<p>
-					Делается это очень просто: берём оба видео и создаём новую композицию с ними так, что бы видео с depth-буффером было снизу.
+					Делается это очень просто: берём оба видео и создаём новую композицию с ними так, чтобы видео с depth-буффером было снизу.
 				</p>
 				<div class="img-box">
 					<img src="images/screenshots/dof-ae-1.png" width="589" height="92" alt="" />
 				</div>
 				<p>
-					К верхнему, цветному видео применяем эффект Lens Blur, указав в качестве параметра <b>Depth Map Layer</b> слой с Z-буффером.
+					К верхнему цветному видео применяем эффект Lens Blur, указав в качестве параметра <b>Depth Map Layer</b> слой с Z-буффером.
 				</p>
 				<div class="img-box">
 					<img src="images/screenshots/dof-ae-2.png" width="364" height="187" alt="" />
 				</div>
 				<p>
-					При необходимости, регулируем фокус параметром <b>Blur Focal Distance</b>, силу размытия &mdash; <b>Iris Radius</b> и форму боке — <b>Iris Shape</b>.
+					При необходимости регулируем фокус параметром <b>Blur Focal Distance</b>, силу размытия &mdash; <b>Iris Radius</b> и форму боке — <b>Iris Shape</b>.
 				</p>
 				<p>
 					Обратите внимание, что на кадры z-буффера wolfcam не накладывает motion blur.
@@ -644,7 +640,7 @@
 
 					<dl>
 						<dt>/mme_blurframes</dt>
-						<dd>Определяет количество промежуточных кадров, склеиваемых в блюр. Чем больше значение, тем медленнее идёт запись, но тем более плавный будет результат. Например, <code>/mmae_blurframes 12</code> означает, что между каждыми кадрами видео Wolfcam будет делать ещё 12 кадров и склеивать их в одну картинку.</dd>
+						<dd>Определяет количество промежуточных кадров, склеиваемых в блюр. Чем больше значение, тем медленнее идёт запись, но тем более плавный будет результат. Например, <code>/mme_blurframes 12</code> означает, что между каждыми кадрами видео Wolfcam будет делать ещё 12 кадров и склеивать их в одну картинку.</dd>
 
 						<dt>/mme_bluroverlap</dt>
 						<dd>Определяет количество «настоящих» кадров, которые накладываются друг на друга.</dd>
@@ -657,33 +653,24 @@
 						</dd>
 					</dl>
 				</p>
-
 				<p>
-					На первых трёх фото <code>/cl_aviFrame 30</code>, на последнем <code>/cl_aviFrame 180</code>. <code>/mme_blurframes 5, 15, 30, 30</code>.
+					Для увеличения качества блюра необходимо повысить значения этих двух команд. Качественые результаты дают значения <code>/cl_aviFrame</code> больше <b>60</b> и <code>/mme_blurframes</code> больше <b>15</b>. Однако, это зависит и от скорости происходящего на экране. 
 				</p>
-
-				<p>
-					По фотографиям видно, что малые значения <code>/mme_blurframes</code> создают очень ступенчатую картинку, а длина шлейфа зависит от <code>/cl_aviFrame</code>.
-				</p>
-
 				<div class="carousel">
 					<div><img src="images/screenshots/mblur-30-5.jpg" /><div class="text">/cl_aviFrame 30, /mme_blurframes 5</div></div>
 					<div><img src="images/screenshots/mblur-30-15.jpg" /><div class="text">/cl_aviFrame 30, /mme_blurframes 15</div></div>
 					<div><img src="images/screenshots/mblur-30-30.jpg" /><div class="text">/cl_aviFrame 30, /mme_blurframes 30</div></div>
 					<div><img src="images/screenshots/mblur-180-30.jpg" /><div class="text">/cl_aviFrame 180, /mme_blurframes 30</div></div>
 				</div>
-
 				<p>
-					Для увеличения качества блюра необходимо повысить значения этих двух команд. Качественые результаты дают значения <code>/cl_aviFrame</code> больше <b>60</b> и <code>/mme_blurframes</code> больше <b>15</b>. Однако, это зависит и от скорости происходящего на экране. 
+					По фотографиям видно, что малые значения <code>/mme_blurframes</code> создают очень ступенчатую картинку, а длина шлейфа у модели зависит от <code>/cl_aviFrame</code>.
 				</p>
-
-
 				<div class="img-box">
 					<img src="images/screenshots/mblur-explained.jpg" width="686" height="497" alt="" />
 				</div>
 
 				<p>
-					Кроме качества, эти переменные сильно влияют на скорость записи: например, для <code>/cl_aviFrame 180</code> и <code>/mme_blurframes 30</code> wolfcam будет рендерить 180 &times; 30 = 5 400 кадров в секунду, что может быть критично.
+					Кроме качества, эти переменные сильно влияют на скорость записи: например, для <code>/cl_aviFrame 180</code> и <code>/mme_blurframes 30</code> wolfcam будет рендерить 180 &times; 30 = 5 400 кадров в секунду.
 				</p>
 
 				<p>
@@ -691,7 +678,7 @@
 				</p>
 
 				<p>
-					Насколько это критично, можно оценить на анимации ниже.
+					Насколько это критично, можно оценить на анимации ниже. Сверху — эффект при <code>/cl_aviFrameRate 180</code> и <code>/mme_blurframes 16</code>, снизу — <code>/cl_aviFrameRate 30</code> и без блюра.
 				</p>
 
 				<div class="img-box" style="width: 100%">
@@ -719,16 +706,16 @@
 					<div><img src="images/screenshots/bloom_enabled.jpg" /></div>
 				</div>
 				<p>
-					В Вульфкаме блум включается переменной <code>/r_enableBloom 1</code>, и регулируется следующими переменными:
+					В Вульфкаме блум включается переменной <code>/r_enableBloom 1</code> и регулируется следующими переменными:
 					<code class="box">
-						<b>/r_bloomPasses</b> &mdash; количество проходов блума для одного кадра (больше &mdash; сильнее эффект)<br />
-						<b>/r_bloomSceneIntensity</b> &mdash; яркость сцены (базового кадра) <br />
-						<b>/r_bloomSaturation</b> &mdash; насыщенность сцены <br />
-						<b>/r_bloomIntensity</b> &mdash; яркость блума <br />
-						<b>/r_bloomSaturation</b> &mdash; насыщенность блума <br />
-						<b>/r_bloomBrightThreshold</b> &mdash; порог яркости пикселя для обретания блума <br />
-						<b>/r_bloomTextureScale</b> &mdash; соотношение размера текстуры блума к размеру кадра <br />
-						<b>/r_bloomDebug</b> &mdash; отладка: отрисовка блума в отдельном "окне", не накладывая его на сцену <br />
+						<b>/r_bloomPasses</b> &mdash; количество проходов блума для одного кадра (больше &mdash; сильнее эффект); <br />
+						<b>/r_bloomSceneIntensity</b> &mdash; яркость сцены (базового кадра); <br />
+						<b>/r_bloomSaturation</b> &mdash; насыщенность сцены; <br />
+						<b>/r_bloomIntensity</b> &mdash; яркость блума; <br />
+						<b>/r_bloomSaturation</b> &mdash; насыщенность блума; <br />
+						<b>/r_bloomBrightThreshold</b> &mdash; порог яркости пикселя, при котором определяется, блум ли это или часть сцены; <br />
+						<b>/r_bloomTextureScale</b> &mdash; соотношение размера текстуры блума к размеру кадра; <br />
+						<b>/r_bloomDebug</b> &mdash; отладка: отрисовка блума в отдельном "окне", не накладывая его на сцену. <br />
 					</code>
 				</p>
 
@@ -741,7 +728,7 @@
 				</p>
 				<p>
 					Где: <br />
-					<code>id</code> &mdash; это номер игрока, полученный командой <code>/players</code> или <code>red</code>, <code>blue</code>, <code>enemy</code>, <code>mates</code>, <code>us</code>, <code>all</code>; <br />
+					<code>id</code> &mdash; это номер игрока, полученный командой <code>/players</code> или значения <code>red</code>, <code>blue</code>, <code>enemy</code>, <code>mates</code>, <code>us</code>, <code>all</code>; <br />
 					<code>param value</code> &mdash; это изменяемый параметр и его новое значение. 
 				</p>
 				<p>
@@ -798,10 +785,13 @@
 				<p>
 					После нажатия клавиши <b>m</b> проигрывание демо станет на паузу, а после возобновления пригрывания начнёт записываться новый демо-файл, содержащий нужный кусок.
 				</p>
+				<p>
+					При записи демо, Wolfcam использует новые значения из /clientoverride. То есть, таким образом можно переписать какие-либо параметры оригинальной демки. 
+				</p>
 
 				<h3>Использование демо 68-го протокола (Quake 3 Arena)</h3>
 				<p>
-					Начиная с версии 9.0 в Вульфкаме появилась поддержка протокола Quake 3 Arena. Для её включения нужно скопировать нужные паки Q3 в директорию /baseq3/ и запустить WolfCam следующим образом (см. раздел "Базовая настройка"):
+					Начиная с версии 9.0 в Вульфкаме появилась поддержка протокола Quake 3 Arena. Для её включения нужно скопировать нужные паки Q3 в директорию /baseq3/ и запустить WolfCam следующим образом (см. раздел <a href="#basic-setup">«Базовая настройка»</a>):
 					<code class="box">
 						wolfcamql.exe +set protocol 68
 					</code>
@@ -833,7 +823,7 @@
 
 				<h3>Названия скриптов</h3>
 				<p>
-					Каждое событие, которое обрабатывается fx-подсистемой, привязано к определённому названий скрипта. Ниже находится список этих названий, описание события, вызывающего их и список аргументом, передаваемых в скрипт. 
+					Каждое событие, которое обрабатывается fx-подсистемой, привязано к определённому названию скрипта. Ниже находится список этих названий, описание события, вызывающего их и список аргументом, передаваемых в скрипт. 
 				</p>
 
 				<table>
@@ -963,13 +953,13 @@
 
 					<dt>Spark</dt>
 					<dd>
-						Добавляет "искорку" — прямоугольный полигон, повёрнутый к камере. Его длинна выставляется переменной <code>size</code>, ширина &mdash; <code>width</code>. Один из концов направлен по вектору <code>velocity</code>.<br />
+						Добавляет «искорку» — прямоугольный полигон, повёрнутый к камере. Его длина выставляется переменной <code>size</code>, ширина — <code>width</code>. Длинная сторона направлена по вектору <code>velocity</code>.<br />
 						Используемые переменные: <code>origin, velocity, size, width, shader, color</code>.
 					</dd>
 
 					<dt>Decal</dt>
 					<dd>
-						Декали используютя для помещения шейдера на поверхности карты. Шейдер остаётся на поверхности в течение <code>life</code> милисекунд. Деколь центрирована по вектору <code>origin</code>, её нормаль направлена по <code>dir</code>.<br />
+						Деколи используютя для помещения шейдера на поверхности карты. Шейдер остаётся на поверхности в течение <code>life</code> милисекунд. Деколь центрирована по вектору <code>origin</code>, её нормаль направлена по <code>dir</code>.<br />
 						Аргументы: <code>life</code> &mdash; время жизни деколи в милисекундах. <br />
 						Используемые переменные: <code>origin, shader, dir, color, rotate, size</code>.
 					</dd>
@@ -1082,7 +1072,7 @@
 					<dd>Положение сущности в пространстве.</dd>
 
 					<dt>velocity</dt>
-					<dd>Линейная скорость сущности: значение этого вектора каждый кадр прибавляется к <code>origin</code>.</dd>
+					<dd>Линейная скорость сущности: значение этого вектора каждый кадр автоматически прибавляется к <code>origin</code>.</dd>
 
 					<dt>angles</dt>
 					<dd>Углы поворота сущности относительно [0;0;0].</dd>
@@ -1099,7 +1089,7 @@
 					-->
 
 					<dt>color</dt>
-					<dd>Цвет вершн сущности.</dd>
+					<dd>Цвет сущности.</dd>
 
 					<dt>v0 ... v9</dt>
 					<dd>Временные переменные для сохранения промежуточных значений. Не влияют ни на что.</dd>
@@ -1264,8 +1254,8 @@
 					Спасибо Данмеру за помощь с оформлением. <br />
 					Спасибо форумам <a href="http://quakelive.ru/" target="_blank">quakelive.ru</a>, <a href="http://movienations.com/" target="_blank">movienations.com</a> и <a href="http://q3mme.proboards.com">q3mme</a>. <br />
 					Спасибо Jones за <a href="https://www.youtube.com/watch?v=FyMJFeirlfU" target="_blank">видео</a>, определившее мой путь в мире квейка. <br />
-					Спасибо Бругалу за WolfCam, а id за QL. <br />
-					И всем остальным, кого я забыл в порыве написать раздел благодарностей.
+					Спасибо Бругалу за WolfCam, а id за Quake Live. <br />
+					И всем остальным, про кого я забыл в благородном порыве написать раздел благодарностей.
 				</p>
 			</section>
 
